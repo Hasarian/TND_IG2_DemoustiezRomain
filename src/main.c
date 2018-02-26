@@ -3,4 +3,6 @@
 
 void main()
 {
+	printf("hellow wolrd");
+	getchar();
 }
