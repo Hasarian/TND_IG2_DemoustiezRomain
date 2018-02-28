@@ -5,11 +5,11 @@ travail de groupe pour le cours de traitement des données numériques dans le c
 directory tree (modifiable)
 
 dossier projet (dossier à partir duquel on met à jour le directory)
- -  src
+	-  src
     dossier dans lequel on va retrouver le code (.c/.h)
-    -Romain
+		-Romain
       on trouvera dedans le code relatif à l'estimation de l'exposant x de a
-    -Alex
+			-Alex
       on trouvera ici le code pour la clef de Shamir
-    -Sam
+					-Sam
      on mettra le code sur le polynome interpolé
