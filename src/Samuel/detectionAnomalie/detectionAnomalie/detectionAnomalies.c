@@ -6,11 +6,18 @@
 #define NBCOLONNES 10
 #define NBELEMS 38.0
 
+typedef double(*ptrFonction)(int);
+
 
 void vider(void);
+void constructionTableNormale(int nbPts, ptrFonction ptr);
 double rechercherZ(double alpha, double tab[][NBCOLONNES]);
 void intervalle(double moyenne, double variance, double n, double alpha, double *intervalleInf, double *intervalleSup);
+double simpson(int nbPts);
+
 void main(void) {
+	//double (*ptrFonction) (int);
+	int nbPts; // pour précision lors de la création du tableau
 	double alphaControle;
 	double alphaSurveillance;
 	int sumXi = 0;
@@ -23,6 +30,10 @@ void main(void) {
 	double intervalleSupControle;
 	double intervalleInfSurveillance;
 	double intervalleSupSurveillance;
+
+
+	constructionTableNormale(49, simpson);
+
 	
 	double tabNormal[NBLIGNES][NBCOLONNES] = {
 		{ 5000, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
@@ -56,11 +67,16 @@ void main(void) {
 	
 	printf("Bienvenus pour un calcule de detection d'anomalie dans un echantillon\n");
 	printf("---------------------------------------------------------------------\n\n");
-	printf("Veuillez entree un pourcentage d insertitude de controle : ");
+	
+	printf("Veuillez entrer le nombre de points pour le niveau de précision de la table : ");
+	scanf_s("%d", &nbPts);
+	vider();
+
+	printf("Veuillez entrer un pourcentage d insertitude de controle : ");
 	scanf_s("%lf", &alphaControle);
 	vider();
 
-	printf("Veuillez entree un pourcentage d insertitude de surveillance : ");
+	printf("Veuillez entrer un pourcentage d insertitude de surveillance : ");
 	scanf_s("%lf", &alphaSurveillance);
 	vider();
 
@@ -137,4 +153,14 @@ void intervalle(double moyenne, double variance, double n, double alpha, double 
 
 	*intervalleInf = moyenne - margeErreur;
 	*intervalleSup = moyenne + margeErreur;
+}
+
+
+void constructionTableNormale(int nbPts, ptrFonction ptr) {
+	double res = (*ptr)(nbPts);
+	printf("res = %.4lf\n\n", res);
+}
+
+double simpson(int nbPts) {
+	return nbPts / 2.;	
 }
