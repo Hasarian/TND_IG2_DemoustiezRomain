@@ -1,0 +1,83 @@
+entrée : dataFile
+---* 
+obtenir alphaControle // 1%
+obtenir alphaSurveillance // 5%
+obtenir dataFile
+
+n = 0
+sommeXi = 0
+sommeXiCarré = 0
+
+module(construction de la table ( Simpson ); f; tabNormale)
+
+xi = lire dataFile
+do while (!EOF)
+sommeXi += xi 
+sommeXiCarré += xi * xi
+xi = lire dataFile
+n++
+===
+moyenne = somme xi / n
+variance = sommeXiCarré / n - (moyenne * moyenne)
+
+module(recherche de la valeur en fonction de alpha; alphaControle, tabNormale; coéfficientAlphaControle)
+
+module(recherche de la valeur en fonction de alpha; alphaSurveillance, tabNormale; coéfficientAlphaSurveillance)
+
+module(calcule de l'intervalle; moyenne, variance, n, coéfficientAlphaControle; intervalleInfControle, intervalleSupControle)
+sortie de l'intervalleControle
+
+module(calcule de l'intervalle; moyenne, variance, n, coéfficientAlphaSurveillance; intervalleInfSurveillance, intervalleSupSurveillance)
+sortie de l'intervalleSurveillance
+___
+
+
+---* construction de la table ( Simpson )
+Obtenir f
+bInf = -5
+
+iLigne = 0
+do while (iLigne < 40) // attention travailler en entier
+iColonne = 0
+do while (iColonne < 10) // attention travailler en entier
+bSup = iLigne / 10 + iColonne / 100
+
+module(Simpson; bInf, bSup, *f // f est un pointeur vers l'inégrale de gauss; resultat)
+
+tabNormal[iLigne][iColonne] = resultat * 10000
+iColonne++
+===
+iLigne++
+===
+___
+
+---* recherche de la valeur en fonction de alpha
+zoneNormaliser = (1 - alpha / 200) * 10000
+
+iLigne = 0
+do while (iLigne < 39 && tabNormale[iLigne + 1][0] <= zoneNormaliser)
+iLigne++
+===
+
+iColonne = 0
+do while (iColonne < 9 && tabNormale[iLigne][iColonne + 1] <= zoneNormaliser)
+iColonne++
+===
+
+if (tabNormale[iLigne][iColonne] != zoneNormaliser)
+iLigneBord = iLigne
+iColonneBord = iColonne + 1
+if (iColonne == 9 && tabNormale[iLigne][iColonne] <  zoneNormaliser)
+iLigneBord = iLigne + 1
+iColonneBord = 0
+___
+interpolation = (zoneNormaliser - tabNormale[iLigne][iColonne]) / (tabNormale[iLigneBord][iColonneBord] - tabNormale[iLigne][iColonne]) 
+___
+coéfficientAlpha = iLigne / 10 + iColonne / 100 + interpolation / 100
+___
+
+---* calcule de la marge d'erreur
+margeErreur = coefficentAlpha * sqrt(variance / n);
+intervalleInf = moyenne - margeErreur;
+intervalleSup = moyenne + margeErreur;
+___
