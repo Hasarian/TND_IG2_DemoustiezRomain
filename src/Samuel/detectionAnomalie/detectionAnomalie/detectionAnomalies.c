@@ -64,7 +64,6 @@ void main(void) {
 		{ 9938, 9940, 9941, 9943, 9945, 9946, 9948, 9949, 9951, 9952 },
 	};
 	int tabData[] = {20,20,20,20,20,20,20,20,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,60,60,60,60,60,60,60,60,60,60,60,60,80,80 };
-	
 	printf("Bienvenus pour un calcule de detection d'anomalie dans un echantillon\n");
 	printf("---------------------------------------------------------------------\n\n");
 	
@@ -91,24 +90,24 @@ void main(void) {
 	printf("Somme xiCarre = %d\n", sumXiSquare);
 
 	moyenne = sumXi / NBELEMS;
-	printf("Moyenne = %.4lf\n", moyenne);
+	printf("Moyenne = %.5lf\n", moyenne);
 
 	variance = sumXiSquare / NBELEMS - moyenne * moyenne;
-	printf("Variance = %.4lf\n", variance);			
+	printf("Variance = %.5lf\n", variance);			
 
 	coefficentAlphaControle = rechercherZ(alphaControle, tabNormal);
-	printf("coefficentAlpha = %.4lf\n", coefficentAlphaControle);
+	printf("coefficentAlpha = %.5lf\n", coefficentAlphaControle);
 
 	intervalle(moyenne, variance, NBELEMS, coefficentAlphaControle, &intervalleInfControle, &intervalleSupControle);
 
-	printf("\nL'intervalle de controle se trouve dans la tranche %.2lf et %.2lf\n", intervalleInfControle, intervalleSupControle);
+	printf("L'intervalle de controle se trouve dans la tranche %.2lf et %.2lf\n\n", intervalleInfControle, intervalleSupControle);
 
 	coefficentAlphaSurveillance = rechercherZ(alphaSurveillance, tabNormal);
-	printf("coefficentAlpha = %.4lf\n", coefficentAlphaSurveillance);
+	printf("coefficentAlpha = %.5lf\n", coefficentAlphaSurveillance);
 
 	intervalle(moyenne, variance, NBELEMS, coefficentAlphaSurveillance, &intervalleInfSurveillance, &intervalleSupSurveillance);
 
-	printf("\nL'intervalle de surveillance se trouve dans la tranche %.2lf et %.2lf\n", intervalleInfSurveillance, intervalleSupSurveillance);
+	printf("L'intervalle de surveillance se trouve dans la tranche %.2lf et %.2lf\n\n", intervalleInfSurveillance, intervalleSupSurveillance);
 
 	system("pause");
 }
@@ -125,7 +124,7 @@ double rechercherZ(double alpha, double tab[][NBCOLONNES]) {
 	double interpolation = 0;
 
 	zoneNormaliser = (1. - (alpha / 200.))*10000;
-	printf("zoneNormaliser = %.4lf\n", zoneNormaliser/10000);
+	printf("\nzoneNormaliser = %.5lf", zoneNormaliser/10000);
 
 	int iLigne = 0;
 	while (iLigne < NBLIGNES -1 && tab[iLigne + 1][0] <= zoneNormaliser) {
@@ -149,7 +148,7 @@ double rechercherZ(double alpha, double tab[][NBCOLONNES]) {
 
 void intervalle(double moyenne, double variance, double n, double alpha, double *intervalleInf, double *intervalleSup) {
 	double margeErreur = alpha * sqrt(variance / n);
-	printf("Marge d erreur = %.4lf\n", margeErreur);
+	printf("Marge d erreur = %.5lf\n", margeErreur);
 
 	*intervalleInf = moyenne - margeErreur;
 	*intervalleSup = moyenne + margeErreur;
