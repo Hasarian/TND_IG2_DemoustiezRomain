@@ -117,8 +117,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ax.c" />
+    <ClCompile Include="calculIntervalle.c" />
     <ClCompile Include="detectionAnomalie.c" />
+    <ClCompile Include="exponentielle.c" />
     <ClCompile Include="Shamir.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\OneDrive - Haute Ecole de Namur-Liege-Luxembourg\2e\TND\fiModele.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
