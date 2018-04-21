@@ -118,6 +118,7 @@
   <ItemGroup>
     <ClCompile Include="ax.c" />
     <ClCompile Include="detectionAnomalie.c" />
+    <ClCompile Include="power.c" />
     <ClCompile Include="Shamir.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
