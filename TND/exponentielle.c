@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdio.h>
-
-float exponentielle(int nbIterationsTaylor, float argument);
+#include "ax.h"
 
 float exponentielle(int nbIterationsTaylor, float argument)
 {
