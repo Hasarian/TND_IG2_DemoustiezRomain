@@ -9,7 +9,7 @@ double fi(double x, int nbPoints,int i,CoordonneePoint coordonneesPoint[])
 	{
 		if (i!=j)
 		{
-			num *= (x-coordonneesPoint[j].x));
+			num *= (x-coordonneesPoint[j].x);
 			denum *= coordonneesPoint[i].x -coordonneesPoint[j].x);
 		}
 	}
