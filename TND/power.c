@@ -26,6 +26,8 @@ void main(void) {
 	double argument;
 	int nbLimites;
 	double reste;
+	int nbIterations;
+	double res;
 
 	do {
 		printf("Pour a^x -> veuillez entrer le a : ");
@@ -38,7 +40,7 @@ void main(void) {
 	vider();
 
 	if (x < 0) {
-		x *= 1;
+		x *= -1;
 		negatif = true;
 	}
 
@@ -53,8 +55,8 @@ void main(void) {
 	nbLimites = (int)argument / LIMITE;
 	reste = argument - nbLimites * LIMITE;
 
-	int nbIterations = degre(nbDecimales, nbLimites);
-	double res = resultat(reste, nbLimites, nbIterations);
+	nbIterations = degre(nbDecimales, nbLimites);
+	res = resultat(reste, nbLimites, nbIterations);
 
 	if (negatif)
 		res = 1 / res;
@@ -64,12 +66,13 @@ void main(void) {
 }
 
 int degre(int nbDecimales, int nbLimites) {
+	double limiteAugmentée;
 	int nbIteration = 1;
 	int diviseur = 1; 
-	bool limiteAcceptable;
 	int nbIterationTaylor;
-	double limiteAugmentée = 2 * (0, 5 ^ (nbIteration + 1));
-
+	bool limiteAcceptable;
+	
+	limiteAugmentée = 2 * (0, 5 ^ (nbIteration + 1));
 	limiteAcceptable = limiteAugmentée / diviseur > LIMITE * intPower(10, -nbDecimales);
 	while (!limiteAcceptable) {
 		limiteAugmentée = 1;
@@ -77,7 +80,7 @@ int degre(int nbDecimales, int nbLimites) {
 		for (iExposant = 0; iExposant < nbIteration; iExposant++) {
 			limiteAugmentée *= LIMITE;
 		}
-		nbIterationTaylor =(int) expressionDuReste(nbDecimales, nbLimites);
+		nbIterationTaylor = (int)expressionDuReste(nbDecimales, nbLimites);
 		diviseur = factorielle(nbIteration);
 		limiteAcceptable = limiteAugmentée / diviseur > LIMITE * intPower(10, -(nbIterationTaylor+1));
 		if (!limiteAcceptable) {
