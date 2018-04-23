@@ -6,7 +6,7 @@
 #define LIMITE 0.5
 
 void vider(void);
-void degré(double limiteAugmentée, int nbDecimales, int nbLimites);
+int degré(int nbDecimales, int nbLimites);
 void resultat(void);
 double expressionDuReste(int nbDecimales, int nbLimites);
 int factorielle(int nbIteration);
@@ -64,7 +64,7 @@ void main(void) {
 	nbLimites = (int)argument / LIMITE;
 	reste = argument - nbLimites * LIMITE;
 
-	degre(limiteAugmentée, nbDecimales, nbLimites);
+	degre(nbDecimales, nbLimites);
 	resultat();
 
 	if (negatif)
@@ -75,11 +75,12 @@ void main(void) {
 }
 
 
-void degré(double limiteAugmentée, int nbDecimales, int nbLimites) {
+int degré(int nbDecimales, int nbLimites) {
 	int nbIteration = 1;
-	int diviseur = 1;  // ???
+	int diviseur = 1; 
 	bool limiteAcceptable;
 	double nbIterationTaylor; // ??? 
+	double limiteAugmentée = 2 * (0, 5 ^ (nbIteration + 1));
 
 	limiteAcceptable = limiteAugmentée / diviseur > LIMITE * pow(10, -nbDecimales);
 	while (!limiteAcceptable) {
@@ -96,6 +97,7 @@ void degré(double limiteAugmentée, int nbDecimales, int nbLimites) {
 			nbIteration++;
 		}
 	}
+	return nbIteration;
 }
 
 
