@@ -79,7 +79,7 @@ int degré(int nbDecimales, int nbLimites) {
 	int nbIteration = 1;
 	int diviseur = 1; 
 	bool limiteAcceptable;
-	double nbIterationTaylor; // ??? 
+	int nbIterationTaylor;
 	double limiteAugmentée = 2 * (0, 5 ^ (nbIteration + 1));
 
 	limiteAcceptable = limiteAugmentée / diviseur > LIMITE * pow(10, -nbDecimales);
@@ -90,9 +90,9 @@ int degré(int nbDecimales, int nbLimites) {
 			limiteAugmentée *= LIMITE;
 			iExposant++;
 		}
-		nbIterationTaylor = expressionDuReste(nbDecimales, nbLimites);
+		nbIterationTaylor =(int) expressionDuReste(nbDecimales, nbLimites);
 		diviseur = factorielle(nbIteration);
-		limiteAcceptable = limiteAugmentée / diviseur > LIMITE * pow(10, -nbDecimales);
+		limiteAcceptable = limiteAugmentée / diviseur > LIMITE * pow(10, -(nbIterationTaylor+1));
 		if (!limiteAcceptable) {
 			nbIteration++;
 		}
