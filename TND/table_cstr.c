@@ -4,7 +4,7 @@ double* table_cstr(Fonction f)
 {
 	int nbPoints = 3;
 	double dernierResultat = 0.5;
-	double tabNormale[LIGNEMAX][COLONNEMAX];
+	TypeTable tabNormale[LIGNEMAX][COLONNEMAX];
 	tabNormale[0][0] = dernierResultat;
 	double bInf = 0;
 	double bSup,resultat;
