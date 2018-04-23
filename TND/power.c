@@ -29,12 +29,12 @@ void main(void) {
 
 	do {
 		printf("Pour a^x -> veuillez entrer le a : ");
-		scanf_s("%.5lf", &a);		// a ne peut pas être négatif
+		scanf_s("%ld", &a);		// a ne peut pas être négatif
 		vider();
 	} while (a < 0);
 
 	printf("Pour a^x -> veuillez entrer le x : ");
-	scanf_s("%.5lf", &x);
+	scanf_s("%ld", &x);
 	vider();
 
 	if (x < 0) {
@@ -53,42 +53,39 @@ void main(void) {
 	nbLimites = (int)argument / LIMITE;
 	reste = argument - nbLimites * LIMITE;
 
-	degre(nbDecimales, nbLimites);
-	resultat();
+	int nbIterations = degre(nbDecimales, nbLimites);
+	double res = resultat(reste, nbLimites, nbIterations);
 
 	if (negatif)
-		resultat = 1 / resultat;
+		res = 1 / res;
 
-	printf("Resultat : %.5lf", resultat);
+	printf("Resultat : %.5lf", res);
 
 }
 
-
-int degré(int nbDecimales, int nbLimites) {
+int degre(int nbDecimales, int nbLimites) {
 	int nbIteration = 1;
 	int diviseur = 1; 
 	bool limiteAcceptable;
 	int nbIterationTaylor;
 	double limiteAugmentée = 2 * (0, 5 ^ (nbIteration + 1));
 
-	limiteAcceptable = limiteAugmentée / diviseur > LIMITE * pow(10, -nbDecimales);
+	limiteAcceptable = limiteAugmentée / diviseur > LIMITE * intPower(10, -nbDecimales);
 	while (!limiteAcceptable) {
 		limiteAugmentée = 1;
-		int iExposant = 0;
-		while (iExposant < nbIteration) {
+		int iExposant;
+		for (iExposant = 0; iExposant < nbIteration; iExposant++) {
 			limiteAugmentée *= LIMITE;
-			iExposant++;
 		}
 		nbIterationTaylor =(int) expressionDuReste(nbDecimales, nbLimites);
 		diviseur = factorielle(nbIteration);
-		limiteAcceptable = limiteAugmentée / diviseur > LIMITE * pow(10, -(nbIterationTaylor+1));
+		limiteAcceptable = limiteAugmentée / diviseur > LIMITE * intPower(10, -(nbIterationTaylor+1));
 		if (!limiteAcceptable) {
 			nbIteration++;
 		}
 	}
 	return nbIteration;
 }
-
 
 double expressionDuReste(int nbDecimales, int nbLimites) {
 
@@ -100,7 +97,6 @@ int factorielle(int nbIteration) {
 		return 1;
 	return nbIteration * factorielle(nbIteration - 1);
 }
-
 
 void vider(void) {
 	int c;

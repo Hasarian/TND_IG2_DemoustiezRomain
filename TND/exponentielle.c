@@ -1,12 +1,16 @@
 #include "ax.h"
 
-//int main(int argc, char *argv[]) {
-//	
-//}
+double resultat(double reste, int nbLimites, int nbIterations) {
+	int i;
+	double terme = 1;
+	for (i = 0; i < nbLimites; i++) {
+		double resultat = exponentielle(nbIterations, LIMITE);
+		terme *= resultat;
+	}
 
-double degré() {
-	int nbIteration = 1;
-	double limiteAugmentée = 2 * intPower(0.5, nbIteration + 1);
+	double resultat = exponentielle(nbIterations, reste);
+	terme *= resultat;
+	return terme;
 }
 
 double intPower(double argument, int nbIterations) {
