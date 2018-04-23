@@ -7,7 +7,7 @@
 #define LIMITE 0.5
 
 /*Alex*/
-float exponentielle(int nbIterationsTaylor, float argument);
+double exponentielle(int nbIterationsTaylor, double argument);
 
 /*Sam*/
 void vider(void);
