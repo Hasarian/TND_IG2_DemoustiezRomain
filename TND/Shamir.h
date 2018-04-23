@@ -7,7 +7,6 @@ struct coordonneePoint
 {
 	double x;
 	double y;
-	CoordonneePoint*pSuiv;
 };
 
-double fi(double x, int nbPoints, int i, CoordonneePoint coordonneesPoint, CoordonneePoint*pCoordonnées);
+double fi(double x, int nbPoints, int i, CoordonneePoint coordonneesPoint[]);
