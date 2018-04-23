@@ -34,7 +34,7 @@ double exponentielle(int nbIterationsTaylor, double argument)
 
 		terme = intPower(argument, degreIteration);
 
-		float diviseur = factorielle(nbIterationsTaylor);
+		int diviseur = factorielle(nbIterationsTaylor);
 		termeTotal += terme / diviseur;
 	}
 	return termeTotal;

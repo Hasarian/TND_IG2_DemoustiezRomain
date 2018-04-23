@@ -1,7 +1,2 @@
-﻿  calculIntervalle.c
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(31): warning C4047: 'fonction' : les niveaux d'indirection de 'char *' et de 'char **' sont différents
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(31): warning C4024: 'fgets' : types différents pour le paramètre formel et réel 1
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(31): warning C4047: 'fonction' : les niveaux d'indirection de 'FILE *' et de 'FILE **' sont différents
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(31): warning C4024: 'fgets' : types différents pour le paramètre formel et réel 3
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(46): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-  TND.vcxproj -> D:\git\TND_IG2_DemoustiezRomain\x64\Debug\TND.exe
+﻿  ShamirBySamy.c
+  TND.vcxproj -> C:\Users\SamyD\Documents\GitHub\TND_IG2_DemoustiezRomain\x64\Debug\TND.exe
