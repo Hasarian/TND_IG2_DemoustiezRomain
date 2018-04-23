@@ -1,15 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <stdbool.h>
-
-#define LIMITE 0.5
-
-void vider(void);
-int degré(int nbDecimales, int nbLimites);
-void resultat(void);
-double expressionDuReste(int nbDecimales, int nbLimites);
-int factorielle(int nbIteration);
+﻿#include "ax.h"
 
 /*
 void main(void) {
