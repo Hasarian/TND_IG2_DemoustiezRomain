@@ -1,5 +1,14 @@
 #include "detectionAnomalie.h"
 #include <fenv.h>
+void parseToConvertDouble(char * str) {
+	int i = 0;
+	while (str[i] != '\n' || str[i] != '\0') {
+		if (str[i] == ',') str[i] = '.';
+		if (str[i] == '\n') {
+			str[i] = '\0';
+		}
+	}
+}
 
 int main(int argc, char *argv[]) { 
 	//float moyenne = 44.21053;
@@ -21,13 +30,13 @@ int main(int argc, char *argv[]) {
 	fopen_s(&dataAEvaluer, "fiModele.csv", "r");
 	if(dataAEvaluer != NULL) {
 		//while (dataAEvaluer != NULL) {
-			char * xiLu;
+			char xiLu[200];
 			double xi;
 			char * ptr;
 			int i = 0;
-			fscanf_s(dataAEvaluer, "%lf", &xi);
-			//fgets(&xiLu, 1, dataAEvaluer);
-			//xi = strtod(xiLu, &ptr);
+			fgets(xiLu,200, dataAEvaluer);
+			parseToConvertDouble(xiLu);
+			xi = strtod(xiLu, &ptr);
 			printf("%f", xi);
 		//}
 
