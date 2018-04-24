@@ -4,14 +4,14 @@
 #include "./Shamir.h"
 #include "detectionAnomalie.h"
 
-void main()
-{
-	//printf("intpower: %lf \n\tshould have: %lf\n",intPower(2,2),4.);
-	//printf("exponentielle: %lf \n\tshould have: %lf\n",exponentielle(6, 2),24.023);
-	//printf("factorielle: %lf\n\tshould have: %lf\n",(double)factorielle(4),24.);
-	printf("decryptage shamir: %lf\n\tshould have: %lf\n",dercyptageShamir(),13.);
-	getchar();
-}
+//void main()
+//{
+//	//printf("intpower: %lf \n\tshould have: %lf\n",intPower(2,2),4.);
+//	//printf("exponentielle: %lf \n\tshould have: %lf\n",exponentielle(6, 2),24.023);
+//	//printf("factorielle: %lf\n\tshould have: %lf\n",(double)factorielle(4),24.);
+//	printf("decryptage shamir: %lf\n\tshould have: %lf\n",dercyptageShamir(),13.);
+//	getchar();
+//}
 
 /*Alex
 double exponentielle(int nbIterationsTaylor, double argument);

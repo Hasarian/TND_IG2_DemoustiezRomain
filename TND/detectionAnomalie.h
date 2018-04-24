@@ -6,6 +6,7 @@
 
 #define LIGNEMAX 40
 #define COLONNEMAX 10
+#define DELIMITEUR_LINE_CSVFILE ','
 
 #define DOUBLETOINT 10000
 typedef int TypeTable;
