@@ -56,6 +56,9 @@
     <ClCompile Include="ShamirBySamy.c">
       <Filter>Fichiers sources\Samuel</Filter>
     </ClCompile>
+    <ClCompile Include="fi.c">
+      <Filter>Fichiers sources\Romain</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\OneDrive - Haute Ecole de Namur-Liege-Luxembourg\2e\TND\fiModele.csv">

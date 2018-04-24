@@ -119,6 +119,7 @@
     <ClCompile Include="ax.c" />
     <ClCompile Include="calculIntervalle.c" />
     <ClCompile Include="detectionAnomalie.c" />
+    <ClCompile Include="fi.c" />
     <ClCompile Include="power.c" />
     <ClCompile Include="exponentielle.c" />
     <ClCompile Include="Shamir.c" />

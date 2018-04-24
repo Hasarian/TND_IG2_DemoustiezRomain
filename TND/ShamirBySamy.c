@@ -22,28 +22,25 @@ int obtentionDesPoints(CoordonneePoint coordonneesPoint[]) {
 	return nbPoints;
 }
 
-//double P(double x, int nbPoints, CoordonneePoint coordonneesPoint[]) {
-//	double res = 0;
-//	for (int i = 0; i < nbPoints; i++)
-//		res += coordonneesPoint[i].y * fi(x, nbPoints, i, coordonneesPoint);
-//	return res;
-//}
-
-
-void main(void) {
-// test obtention des points
-	int nbPoints;
-	double x = 0;
-	CoordonneePoint coordonneesPoints[10]; // max ??
-	
-	nbPoints = obtentionDesPoints(coordonneesPoints);
-
-	for (int i = 0; i < nbPoints; i++) {
-
-		printf("la coordonnee de X pour le point %d : %.lf\n", i + 1, coordonneesPoints[i].x);
-		printf("la coordonnee de Y pour le point %d : %.lf\n", i + 1, coordonneesPoints[i].y);
-
-		getchar();
-	}
-
+double P(double x, int nbPoints, CoordonneePoint coordonneesPoint[]) {
+	double res = 0;
+	for (int i = 0; i < nbPoints; i++)
+		res += coordonneesPoint[i].y * fi(x, nbPoints, i, coordonneesPoint);
+	return res;
 }
+
+
+//void main(void) {
+//// test obtention des points
+//	int nbPoints;
+//	double x = 1;
+//	CoordonneePoint coordonneesPoints[10]; // max ??
+//	
+//	nbPoints = obtentionDesPoints(coordonneesPoints);
+//	double retourP;
+//	
+//// test obtention de P (modifier la valeur de x)
+//	retourP = P(x, nbPoints, coordonneesPoints);
+//	printf("retour P : %.10lf", retourP);
+//	getchar();
+//}
