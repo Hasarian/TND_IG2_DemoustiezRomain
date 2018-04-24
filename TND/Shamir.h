@@ -10,7 +10,7 @@ struct coordonneePoint
 };
 
 double fi(double x, int nbPoints, int i, CoordonneePoint coordonneesPoint[]);
-
+double dercyptageShamir();
 // Samy
 int obtentionDesPoints(CoordonneePoint coordonneesPoint[]);
 double P(double x, int nbPoints, CoordonneePoint coordonneesPoint[]);

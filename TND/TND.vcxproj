@@ -118,12 +118,14 @@
   <ItemGroup>
     <ClCompile Include="ax.c" />
     <ClCompile Include="calculIntervalle.c" />
+    <ClCompile Include="decryptshamir.cpp" />
     <ClCompile Include="detectionAnomalie.c" />
     <ClCompile Include="fi.c" />
     <ClCompile Include="power.c" />
     <ClCompile Include="exponentielle.c" />
     <ClCompile Include="Shamir.c" />
     <ClCompile Include="ShamirBySamy.c" />
+    <ClCompile Include="test.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\OneDrive - Haute Ecole de Namur-Liege-Luxembourg\2e\TND\fiModele.csv" />

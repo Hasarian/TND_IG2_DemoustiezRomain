@@ -1,7 +1,11 @@
-﻿  calculIntervalle.c
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(31): warning C4047: 'fonction' : les niveaux d'indirection de 'char *' et de 'char **' sont différents
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(31): warning C4024: 'fgets' : types différents pour le paramètre formel et réel 1
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(31): warning C4047: 'fonction' : les niveaux d'indirection de 'FILE *' et de 'FILE **' sont différents
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(31): warning C4024: 'fgets' : types différents pour le paramètre formel et réel 3
-d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(46): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-  TND.vcxproj -> D:\git\TND_IG2_DemoustiezRomain\x64\Debug\TND.exe
+﻿  ShamirBySamy.c
+  fi.c
+  test.c
+c:\users\romain\documents\github\tnd_ig2_demoustiezromain\tnd\test.c(12): warning C4013: 'dercyptageShamir' non défini(e) ; extern retournant int pris par défaut
+c:\users\romain\documents\github\tnd_ig2_demoustiezromain\tnd\test.c(12): warning C4477: 'printf' : la chaîne de format '%lf' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'int'
+  Génération de code en cours...
+  decryptshamir.cpp
+decryptshamir.obj : error LNK2019: symbole externe non résolu "int __cdecl obtentionDesPoints(struct coordonneePoint * const)" (?obtentionDesPoints@@YAHQEAUcoordonneePoint@@@Z) référencé dans la fonction "double __cdecl dercyptageShamir(void)" (?dercyptageShamir@@YANXZ)
+decryptshamir.obj : error LNK2019: symbole externe non résolu "double __cdecl P(double,int,struct coordonneePoint * const)" (?P@@YANNHQEAUcoordonneePoint@@@Z) référencé dans la fonction "double __cdecl dercyptageShamir(void)" (?dercyptageShamir@@YANXZ)
+test.obj : error LNK2019: symbole externe non résolu dercyptageShamir référencé dans la fonction main
+C:\Users\Romain\Documents\GitHub\TND_IG2_DemoustiezRomain\x64\Debug\TND.exe : fatal error LNK1120: 3 externes non résolus

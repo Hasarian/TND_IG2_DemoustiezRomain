@@ -10,7 +10,7 @@ void parseToConvertDouble(char * str) {
 	}
 }
 
-int main(int argc, char *argv[]) { 
+/*int main(int argc, char *argv[]) { 
 	//float moyenne = 44.21053;
 	//float variance = 277.00831;
 	//float alphaControl = 0.01;
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
 		puts("Le fichier n\'existe pas !");
 	}
 	system("pause");
-}
+}*/
 
 float calculIntervalle(float moyenne, float variance, int n, float coefficiantAlpha, float *upperLimit)
 {
