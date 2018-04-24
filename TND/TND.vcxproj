@@ -118,7 +118,7 @@
   <ItemGroup>
     <ClCompile Include="ax.c" />
     <ClCompile Include="calculIntervalle.c" />
-    <ClCompile Include="decryptshamir.cpp" />
+    <ClCompile Include="decryptshamir.c" />
     <ClCompile Include="detectionAnomalie.c" />
     <ClCompile Include="fi.c" />
     <ClCompile Include="power.c" />

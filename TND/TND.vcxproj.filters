@@ -62,7 +62,7 @@
     <ClCompile Include="test.c">
       <Filter>Fichiers sources\Romain</Filter>
     </ClCompile>
-    <ClCompile Include="decryptshamir.cpp">
+    <ClCompile Include="decryptshamir.c">
       <Filter>Fichiers sources\Romain</Filter>
     </ClCompile>
   </ItemGroup>

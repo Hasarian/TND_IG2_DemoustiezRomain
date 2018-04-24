@@ -1,22 +1,22 @@
 #include "detectionAnomalie.h"
 #include <fenv.h>
 
-int main(int argc, char *argv[]) { 
-	//float moyenne = 44.21053;
-	//float variance = 277.00831;
-	//float alphaControl = 0.01;
-	//float alphaWarning = 0.05;
-	//float coefficiantAlplha = 1.64500;
-	//int n = 38;
-	//float lowerLimit;
-	//float upperLimit;
-
-	//lowerLimit = calculIntervalle(moyenne, variance, n, coefficiantAlplha, &upperLimit);
-	//printf("[%.5f, %.5f]\n", lowerLimit, upperLimit);
-	//system("pause");
-
-	system("pause");
-}
+//int main(int argc, char *argv[]) { 
+//	//float moyenne = 44.21053;
+//	//float variance = 277.00831;
+//	//float alphaControl = 0.01;
+//	//float alphaWarning = 0.05;
+//	//float coefficiantAlplha = 1.64500;
+//	//int n = 38;
+//	//float lowerLimit;
+//	//float upperLimit;
+//
+//	//lowerLimit = calculIntervalle(moyenne, variance, n, coefficiantAlplha, &upperLimit);
+//	//printf("[%.5f, %.5f]\n", lowerLimit, upperLimit);
+//	//system("pause");
+//
+//	system("pause");
+//}
 
 float calculIntervalle(float moyenne, float variance, int n, float coefficiantAlpha, float *upperLimit)
 {
@@ -29,7 +29,7 @@ float calculIntervalle(float moyenne, float variance, int n, float coefficiantAl
 
 float traitementBaseModele(int tailleEchantillon, float lowerControlLimit, float upperControlLimit, float lowerWarningLimit, float upperWarningLimit, float dataAEvaluer)
 {
-	float sommeEchantillion = 0;
+	double sommeEchantillion = 0;
 	FILE* ficsv;
 	fopen_s(&ficsv, "fiModele.csv", "r");
 	if (ficsv != NULL) {
@@ -45,15 +45,13 @@ float traitementBaseModele(int tailleEchantillon, float lowerControlLimit, float
 				tailleReelleEchantillon++;
 			}
 			double xBarre = sommeEchantillion / tailleReelleEchantillon;
-			char * libEchantillon;
 			char * str;
 			if (xBarre < lowerWarningLimit || xBarre > upperWarningLimit) {
-				sprintf(libEchantillon, "Echantillon %d composé de %d valeur : ", numEchantillon, tailleReelleEchantillon);
-				str = "nous sommes endehors de l'intervalle de surveillance";
+				str = "nous sommes endehors de l intervalle de surveillance";
 				if (xBarre < lowerControlLimit || xBarre > upperControlLimit) {
-					str = "valeurs érronées";
+					str = "valeurs erronees";
 				}
-				puts(strcat(libEchantillon, str));
+				printf("Echantillon %d composé de %d valeur : %s", numEchantillon, tailleReelleEchantillon, str);
 			}
 			numEchantillon++;
 		}

@@ -29,12 +29,30 @@ double P(double x, int nbPoints, CoordonneePoint coordonneesPoint[]) {
 	return res;
 }
 
+void calculeMaxPolynomeLagrange(void) {
+	CoordonneePoint coordonneesPoint[NBMAXPOINTS];
+	int nbPoints = obtentionDesPoints(coordonneesPoint);
+	double intervalle = 0.01;
+	double x = coordonneesPoint[0].x;
+	double Ymax = LONG_MIN; 
+	double Xmax = LONG_MIN;
 
-//void main(void) {
+	for (int i = 0; x < coordonneesPoint[nbPoints - 1].x; i++) {
+		double res = P(x, nbPoints, coordonneesPoint); // x = i ???
+		if (res > Ymax) {
+			Ymax = res;
+			Xmax = x;
+		}
+		x += intervalle;
+	}
+	printf("Xmax vaut %lf et Ymax vaut %lf", Xmax, Ymax);
+}
+
+void main(void) {
 //// test obtention des points
 //	int nbPoints;
 //	double x = 1;
-//	CoordonneePoint coordonneesPoints[10]; // max ??
+//	CoordonneePoint coordonneesPoints[10]; 
 //	
 //	nbPoints = obtentionDesPoints(coordonneesPoints);
 //	double retourP;
@@ -43,4 +61,8 @@ double P(double x, int nbPoints, CoordonneePoint coordonneesPoint[]) {
 //	retourP = P(x, nbPoints, coordonneesPoints);
 //	printf("retour P : %.10lf", retourP);
 //	getchar();
-//}
+
+// test calculeMaxPolynomeLagrange
+	calculeMaxPolynomeLagrange();
+	getchar();
+}
