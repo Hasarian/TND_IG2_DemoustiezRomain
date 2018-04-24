@@ -18,50 +18,50 @@ void main(void) {
 }
 */
 
-void main(void) {
-	bool negatif = false;
-	double a;	
-	double x;
-	int nbDecimales;
-	double argument;
-	int nbLimites;
-	double reste;
-
-	do {
-		printf("Pour a^x -> veuillez entrer le a : ");
-		scanf_s("%ld", &a);		// a ne peut pas être négatif
-		vider();
-	} while (a < 0);
-
-	printf("Pour a^x -> veuillez entrer le x : ");
-	scanf_s("%ld", &x);
-	vider();
-
-	if (x < 0) {
-		x *= 1;
-		negatif = true;
-	}
-
-	do {
-		printf("Pour la précision, veuillez entre un nombre positif de décimales : ");
-		scanf_s("%d", &nbDecimales);
-		vider();
-	} while (nbDecimales < 0);
-
-	argument = x * log(a);
-
-	nbLimites = (int)argument / LIMITE;
-	reste = argument - nbLimites * LIMITE;
-
-	int nbIterations = degre(nbDecimales, nbLimites);
-	double res = resultat(reste, nbLimites, nbIterations);
-
-	if (negatif)
-		res = 1 / res;
-
-	printf("Resultat : %.5lf", res);
-
-}
+//void main(void) {
+//	bool negatif = false;
+//	double a;	
+//	double x;
+//	int nbDecimales;
+//	double argument;
+//	int nbLimites;
+//	double reste;
+//
+//	do {
+//		printf("Pour a^x -> veuillez entrer le a : ");
+//		scanf_s("%ld", &a);		// a ne peut pas être négatif
+//		vider();
+//	} while (a < 0);
+//
+//	printf("Pour a^x -> veuillez entrer le x : ");
+//	scanf_s("%ld", &x);
+//	vider();
+//
+//	if (x < 0) {
+//		x *= 1;
+//		negatif = true;
+//	}
+//
+//	do {
+//		printf("Pour la précision, veuillez entre un nombre positif de décimales : ");
+//		scanf_s("%d", &nbDecimales);
+//		vider();
+//	} while (nbDecimales < 0);
+//
+//	argument = x * log(a);
+//
+//	nbLimites = (int)argument / LIMITE;
+//	reste = argument - nbLimites * LIMITE;
+//
+//	int nbIterations = degre(nbDecimales, nbLimites);
+//	double res = resultat(reste, nbLimites, nbIterations);
+//
+//	if (negatif)
+//		res = 1 / res;
+//
+//	printf("Resultat : %.5lf", res);
+//
+//}
 
 int degre(int nbDecimales, int nbLimites) {
 	int nbIteration = 1;

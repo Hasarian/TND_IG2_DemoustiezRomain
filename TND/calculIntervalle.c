@@ -1,6 +1,7 @@
 #include "detectionAnomalie.h"
+#include <fenv.h>
 
-/*int main(int argc, char *argv[]) { 
+int main(int argc, char *argv[]) { 
 	//float moyenne = 44.21053;
 	//float variance = 277.00831;
 	//float alphaControl = 0.01;
@@ -18,22 +19,25 @@
 	double xi;
 	FILE* dataAEvaluer;
 	fopen_s(&dataAEvaluer, "fiModele.csv", "r");
-	if (&dataAEvaluer != NULL) {
-		char * xiLu;
-		int i = 0;
+	if(dataAEvaluer != NULL) {
+		//while (dataAEvaluer != NULL) {
+			char * xiLu;
+			double xi;
+			char * ptr;
+			int i = 0;
+			fscanf_s(dataAEvaluer, "%lf", &xi);
+			//fgets(&xiLu, 1, dataAEvaluer);
+			//xi = strtod(xiLu, &ptr);
+			printf("%f", xi);
+		//}
 
-		fgets(&xiLu, 1, &dataAEvaluer);
-		if (xiLu != NULL) printf("OK");
-		while (xiLu[i] != '\n' || xiLu[i] != '\0')
-			i++;
-		xiLu[i] = '\0';
-		xi = atof(xiLu);
-		printf("%s - %f\n", xiLu, xi);
+		fclose(dataAEvaluer);
 	}
 	else {
 		puts("Le fichier n\'existe pas !");
 	}
-}*/
+	system("pause");
+}
 
 float calculIntervalle(float moyenne, float variance, int n, float coefficiantAlpha, float *upperLimit)
 {
