@@ -44,22 +44,25 @@
     <ClCompile Include="detectionAnomalie.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-
     <ClCompile Include="power.c">
       <Filter>Fichiers sources\Samuel</Filter>
     </ClCompile>
-
     <ClCompile Include="exponentielle.c">
       <Filter>Fichiers sources\Alexandre</Filter>
     </ClCompile>
     <ClCompile Include="calculIntervalle.c">
       <Filter>Fichiers sources\Alexandre</Filter>
     </ClCompile>
+    <ClCompile Include="fi.c">
+      <Filter>Fichiers sources\Romain</Filter>
+    </ClCompile>
+    <ClCompile Include="ShamirBySamy.c">
+      <Filter>Fichiers sources\Samuel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\OneDrive - Haute Ecole de Namur-Liege-Luxembourg\2e\TND\fiModele.csv">
       <Filter>Fichiers de ressources</Filter>
     </None>
-
   </ItemGroup>
 </Project>
