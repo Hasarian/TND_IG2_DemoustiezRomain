@@ -27,32 +27,35 @@ float calculIntervalle(float moyenne, float variance, int n, float coefficiantAl
 	return intervalleInf;
 }
 
-float traitementBaseModele(int n, float lowerControlLimit, float upperControlLimit, float lowerWarningLimit, float upperWarningLimit, float dataAEvaluer)
+float traitementBaseModele(int tailleEchantillon, float lowerControlLimit, float upperControlLimit, float lowerWarningLimit, float upperWarningLimit, float dataAEvaluer)
 {
 	float sommeEchantillion = 0;
 	FILE* ficsv;
 	fopen_s(&ficsv, "fiModele.csv", "r");
 	if (ficsv != NULL) {
-		int i = 0;
 		while (!feof(ficsv)) {
-			while (i < n && !feof(ficsv)) {
+			int numEchantillon = 1;
+			int tailleReelleEchantillon = 0;
+			while (tailleReelleEchantillon < tailleEchantillon && !feof(ficsv)) {
 				double xi;
 				char poubelle;
 				fscanf_s(ficsv, "%lf", &xi);
 				fscanf_s(ficsv, "%c", &poubelle);
 				sommeEchantillion += xi;
+				tailleReelleEchantillon++;
 			}
-
-			double xBarre = sommeEchantillion / n;
+			double xBarre = sommeEchantillion / tailleReelleEchantillon;
+			char * libEchantillon;
 			char * str;
 			if (xBarre < lowerWarningLimit || xBarre > upperWarningLimit) {
+				sprintf(libEchantillon, "Echantillon %d composé de %d valeur : ", numEchantillon, tailleReelleEchantillon);
 				str = "nous sommes endehors de l'intervalle de surveillance";
 				if (xBarre < lowerControlLimit || xBarre > upperControlLimit) {
-					str = "valeur érronée";
+					str = "valeurs érronées";
 				}
-
-				puts(str);
+				puts(strcat(libEchantillon, str));
 			}
+			numEchantillon++;
 		}
 		fclose(ficsv);
 	}
