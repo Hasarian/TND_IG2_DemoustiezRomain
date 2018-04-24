@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 
 float calculIntervalle(float moyenne, float variance, int n, float coefficiantAlpha, float *upperLimit)
 {
-	float margeErreur = coefficiantAlpha * sqrt(variance / n);
+	float margeErreur = coefficiantAlpha * (float)sqrt(variance / n);
 	float intervalleInf = moyenne - margeErreur;
 	float intervalleSup = moyenne + margeErreur;
 	*upperLimit = intervalleSup;
