@@ -110,7 +110,7 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 	}
 }
 
-double* table_cstr(Fonction f)
+TypeTable* table_cstr(Fonction f)
 {
 	int nbPoints = 3;
 	double dernierResultat = 0.5;

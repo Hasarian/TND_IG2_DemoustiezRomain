@@ -1,5 +1,7 @@
-﻿  detectionAnomalie.c
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(34): warning C4133: '=' : types incompatibles - de 'double *' à 'TypeTable *'
+﻿  test.c
+  power.c
+  main.c
+  detectionAnomalie.c
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(50): warning C4047: 'fonction' : les niveaux d'indirection de 'TypeTable **' et de 'TypeTable *' sont différents
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(50): warning C4024: 'valeurAlpha' : types différents pour le paramètre formel et réel 2
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(51): warning C4047: 'fonction' : les niveaux d'indirection de 'TypeTable **' et de 'TypeTable *' sont différents
@@ -17,10 +19,17 @@ d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(86): warning C4473: 'fsc
   d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(86): note: cet argument est utilisé comme taille de mémoire tampon
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(118): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(128): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(132): warning C4047: 'return' : les niveaux d'indirection de 'double *' et de 'TypeTable [40][10]' sont différents
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(132): warning C4047: 'return' : les niveaux d'indirection de 'TypeTable *' et de 'TypeTable [40][10]' sont différents
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(139): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(170): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(165): warning C4715: 'traitementBaseModeles' : les chemins de contrôle ne retournent pas tous une valeur
+  calculIntervalle.c
+  ax.c
+  Shamir.c
+  Génération de code en cours...
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(132): warning C4172: retourne l'adresse d'une variable locale ou : tabNormale temporaire
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(165): warning C4715: 'traitementBaseModeles' : les chemins de contrôle ne retournent pas tous une valeur
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(196): warning C4715: 'valeurAlpha' : les chemins de contrôle ne retournent pas tous une valeur
+  LINK : D:\git\TND_IG2_DemoustiezRomain\Debug\TND.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
+erreur.obj : warning LNK4099: PDB 'vc140.pdb' n'a pu être trouvé avec 'erreur.obj' ou sur 'D:\git\TND_IG2_DemoustiezRomain\Debug\vc140.pdb' ; l'objet sera lié sans informations de débogage
+simpsonGeneralisation.obj : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'simpsonGeneralisation.obj' ou sur 'D:\git\TND_IG2_DemoustiezRomain\Debug\vc120.pdb' ; l'objet sera lié sans informations de débogage
   TND.vcxproj -> D:\git\TND_IG2_DemoustiezRomain\Debug\TND.exe
