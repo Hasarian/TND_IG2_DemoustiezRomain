@@ -18,7 +18,7 @@ void main(void) {
 }
 */
 
-/*void main(void) {
+double ax(void) {
     bool negatif = false;
     double a;	
 	double x;
@@ -30,7 +30,7 @@ void main(void) {
 	double res;
 
 	do {
-		printf("Pour a^x -> veuillez entrer le a : ");
+		printf("Pour a^x -> veuillez entrer le a (positif) : ");
 		scanf_s("%lf", &a);		// a ne peut pas être négatif
 		vider();
 	} while (a < 0);
@@ -61,9 +61,8 @@ void main(void) {
 	if (negatif)
 		res = 1 / res;
 
-	printf("Resultat : %.5lf\n", res);
-	system("pause");
-}*/
+	return res;
+}
 
 int degre(int nbDecimales, int nbLimites) {
 	double limiteAugmentée;
@@ -72,8 +71,7 @@ int degre(int nbDecimales, int nbLimites) {
 	int nbIterationTaylor;
 	bool limiteAcceptable;
 	
-	limiteAugmentée = 2 * (0, 5 ^ (nbIteration + 1));
-	limiteAcceptable = limiteAugmentée / diviseur > LIMITE * intPower(10, -nbDecimales);
+	limiteAcceptable = false;
 	while (!limiteAcceptable) {
 		limiteAugmentée = 1;
 		int iExposant;

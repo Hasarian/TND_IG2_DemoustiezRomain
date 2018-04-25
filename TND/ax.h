@@ -15,3 +15,4 @@ void vider(void);
 int degre(int nbDecimales, int nbLimites);
 double expressionDuReste(int nbDecimales, int nbLimites);
 int factorielle(int nbIteration);
+double ax();

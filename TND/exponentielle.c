@@ -25,17 +25,12 @@ double intPower(double argument, int nbIterations) {
 
 double exponentielle(int nbIterationsTaylor, double argument)
 {
-	double termeTotal = 1;
-	int degreIteration;
-
-	for (degreIteration = 1; degreIteration < nbIterationsTaylor; degreIteration++) {
-		double terme;
-		int iteration = 0;
-
-		terme = intPower(argument, degreIteration);
-
-		int diviseur = factorielle(nbIterationsTaylor);
-		termeTotal += terme / diviseur;
+	double termeTotal = 0;
+	for (int i = 0; i < nbIterationsTaylor; i++)
+	{
+		double petitTerme = intPower(argument, i);
+		petitTerme /= factorielle(i);
+		termeTotal += petitTerme;
 	}
 	return termeTotal;
 }

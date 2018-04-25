@@ -48,7 +48,7 @@ void calculeMaxPolynomeLagrange(void) {
 	printf("Xmax vaut %lf et Ymax vaut %lf", Xmax, Ymax);
 }
 
-void main(void) {
+/*void main(void) {
 //// test obtention des points
 //	int nbPoints;
 //	double x = 1;
@@ -65,4 +65,4 @@ void main(void) {
 // test calculeMaxPolynomeLagrange
 	calculeMaxPolynomeLagrange();
 	getchar();
-}
+}*/
