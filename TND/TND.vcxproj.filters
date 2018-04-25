@@ -33,6 +33,9 @@
     <ClInclude Include="detectionAnomalie.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="header.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Shamir.c">
@@ -53,17 +56,11 @@
     <ClCompile Include="calculIntervalle.c">
       <Filter>Fichiers sources\Alexandre</Filter>
     </ClCompile>
-    <ClCompile Include="fi.c">
-      <Filter>Fichiers sources\Romain</Filter>
-    </ClCompile>
-    <ClCompile Include="ShamirBySamy.c">
-      <Filter>Fichiers sources\Samuel</Filter>
-    </ClCompile>
     <ClCompile Include="test.c">
       <Filter>Fichiers sources\Romain</Filter>
     </ClCompile>
-    <ClCompile Include="decryptshamir.c">
-      <Filter>Fichiers sources\Romain</Filter>
+    <ClCompile Include="main.c">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
