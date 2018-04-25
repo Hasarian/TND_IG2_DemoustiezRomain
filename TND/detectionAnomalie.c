@@ -21,7 +21,7 @@ void detecteAnomalies(void){
 	double upperControlLimit;
 	double lowerWarningLimit;
 	double upperWarningLimit;
-	TypeTable * tableNormale[COLONNEMAX];
+	TypeTable tableNormale[LIGNEMAX][COLONNEMAX] = { {0} };
 
 	FILE* dataFile;
 
@@ -32,11 +32,11 @@ void detecteAnomalies(void){
 
 	n = 0;
 
-	*tableNormale = table_cstr(fLoiNormale);
+	table_cstr(fLoiNormale, &tableNormale);
 
 	for(int iLigne = 0; iLigne < LIGNEMAX; iLigne++) {
 		for(int iCol = 0; iCol < COLONNEMAX; iCol++){
-			printf("%lf", tableNormale[iLigne][iCol]);
+			printf("%d | ", tableNormale[iLigne][iCol]);
 		}
 		printf("\n");
 	}
@@ -119,11 +119,10 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 	}
 }
 
-TypeTable* table_cstr(Fonction f)
+void table_cstr(Fonction f, TypeTable tabNormale[][COLONNEMAX])
 {
 	int nbPoints = 3;
 	double dernierResultat = 0.5;
-	TypeTable tabNormale[LIGNEMAX][COLONNEMAX];
 	tabNormale[0][0] = dernierResultat;
 	double bInf = 0;
 	double bSup, resultat;
@@ -131,16 +130,38 @@ TypeTable* table_cstr(Fonction f)
 	{
 		for (int iColonne = 0; iColonne < COLONNEMAX; iColonne++)
 		{
-			bSup = iLigne / 10 + iColonne / 100;
+			bSup = (iLigne / 10.) + (iColonne / 100.);
 			resultat = calculSimpson(nbPoints, bInf, bSup, f);
 			dernierResultat += resultat;
-			tabNormale[iLigne][iColonne] = resultat*DOUBLETOINT;
+			tabNormale[iLigne][iColonne] = (TypeTable) (dernierResultat*DOUBLETOINT);
 			bInf = bSup;
 		}
 	}
 	return tabNormale;
 }
 
+
+//TypeTable* table_cstr(Fonction f)
+//{
+//	int nbPoints = 3;
+//	double dernierResultat = 0.5;
+//	TypeTable tabNormale[LIGNEMAX][COLONNEMAX];
+//	tabNormale[0][0] = dernierResultat;
+//	double bInf = 0;
+//	double bSup, resultat;
+//	for (int iLigne = 0; iLigne < LIGNEMAX; iLigne++)
+//	{
+//		for (int iColonne = 0; iColonne < COLONNEMAX; iColonne++)
+//		{
+//			bSup = iLigne / 10 + iColonne / 100;
+//			resultat = calculSimpson(nbPoints, bInf, bSup, f);
+//			dernierResultat += resultat;
+//			tabNormale[iLigne][iColonne] = resultat*DOUBLETOINT;
+//			bInf = bSup;
+//		}
+//	}
+//	return tabNormale;
+//}
 
 double traitementBaseModeles(double alpha, TypeTable* tableNormale[])
 {
@@ -173,7 +194,7 @@ double traitementBaseModeles(double alpha, TypeTable* tableNormale[])
 	}
 }
 
-double valeurAlpha(double alpha, TypeTable tableNormale[][COLONNEMAX])
+double valeurAlpha(double alpha, TypeTable tableNormale[LIGNEMAX][COLONNEMAX])
 {
 	int interpolation = 0;
 	int zoneNormalisee = (1 - alpha / 200) * DOUBLETOINT;
