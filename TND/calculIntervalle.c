@@ -29,13 +29,16 @@ float calculIntervalle(float moyenne, float variance, int n, float coefficiantAl
 
 float traitementBaseModele(int tailleEchantillon, float lowerControlLimit, float upperControlLimit, float lowerWarningLimit, float upperWarningLimit, float dataAEvaluer)
 {
-	double sommeEchantillion = 0;
+	int numEchantillon;
+	int tailleReelleEchantillon;
+	double sommeEchantillion;
 	FILE* ficsv;
 	fopen_s(&ficsv, "fiModele.csv", "r");
 	if (ficsv != NULL) {
 		while (!feof(ficsv)) {
-			int numEchantillon = 1;
-			int tailleReelleEchantillon = 0;
+			numEchantillon = 1;
+			tailleReelleEchantillon = 0;
+			sommeEchantillion = 0;
 			while (tailleReelleEchantillon < tailleEchantillon && !feof(ficsv)) {
 				double xi;
 				char poubelle;
