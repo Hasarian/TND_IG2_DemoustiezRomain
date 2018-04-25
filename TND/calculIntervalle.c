@@ -17,7 +17,7 @@
 //	system("pause");
 //}
 
-float calculIntervalle(float moyenne, float variance, int n, float coefficiantAlpha, float *upperLimit)
+double calculIntervalle(double moyenne, double variance, int n, double coefficiantAlpha, double *upperLimit)
 {
 	float margeErreur = coefficiantAlpha * (float)sqrt(variance / n);
 	float intervalleInf = moyenne - margeErreur;
@@ -30,7 +30,7 @@ void detecteAnomalies(int tailleEchantillon, double lowerControlLimit, double up
 {
 	int numEchantillon;
 	int tailleReelleEchantillon;
-	double sommeEchantillion;
+	double sommeEchantillon;
 	FILE* ficsv;
 	fopen_s(&ficsv, "fiSam.csv", "r");
 	if (ficsv != NULL) {
@@ -39,16 +39,15 @@ void detecteAnomalies(int tailleEchantillon, double lowerControlLimit, double up
 		fscanf_s(ficsv, "%lf", &xi);
 		while (!feof(ficsv)) {
 			tailleReelleEchantillon = 0;
-			sommeEchantillion = 0;
+			sommeEchantillon = 0;
 			while (tailleReelleEchantillon < tailleEchantillon && !feof(ficsv)) {
 				char buffer;
 				fscanf_s(ficsv, "%c", &buffer);
-				sommeEchantillion += xi;
+				sommeEchantillon += xi;
 				tailleReelleEchantillon++;
-				printf_s("échantillon %d - %c\n", numEchantillon, buffer);
 				fscanf_s(ficsv, "%lf", &xi);
 			}
-			double xBarre = sommeEchantillion / (double) tailleReelleEchantillon;
+			double xBarre = sommeEchantillon / (double) tailleReelleEchantillon;
 			char * str;
 			if (xBarre < lowerWarningLimit || xBarre > upperWarningLimit) {
 				str = "nous sommes endehors de l intervalle de surveillance";

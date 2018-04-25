@@ -20,7 +20,7 @@ void main(void)
 			break;
 		case 2: calculeMaxPuissance();
 			break;
-		case 3: //calculeExpBaseA();
+		case 3: calculeExpBaseA();
 			break;
 		case 4:// determineModeleAnomalies();
 			break;
