@@ -35,17 +35,18 @@ void detecteAnomalies(int tailleEchantillon, double lowerControlLimit, double up
 	fopen_s(&ficsv, "fiSam.csv", "r");
 	if (ficsv != NULL) {
 		numEchantillon = 1;
+		double xi;
+		fscanf_s(ficsv, "%lf", &xi);
 		while (!feof(ficsv)) {
 			tailleReelleEchantillon = 0;
 			sommeEchantillion = 0;
 			while (tailleReelleEchantillon < tailleEchantillon && !feof(ficsv)) {
-				double xi;
 				char buffer;
-				fscanf_s(ficsv, "%lf", &xi);
 				fscanf_s(ficsv, "%c", &buffer);
 				sommeEchantillion += xi;
 				tailleReelleEchantillon++;
 				printf_s("échantillon %d - %c\n", numEchantillon, buffer);
+				fscanf_s(ficsv, "%lf", &xi);
 			}
 			double xBarre = sommeEchantillion / (double) tailleReelleEchantillon;
 			char * str;
