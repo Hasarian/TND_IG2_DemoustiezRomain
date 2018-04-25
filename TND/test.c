@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "ax.h"
-#include "./Shamir.h"
-#include "detectionAnomalie.h"
-
+#include "header.h"
 //void main()
 //{
 //	//printf("intpower: %lf \n\tshould have: %lf\n",intPower(2,2),4.);

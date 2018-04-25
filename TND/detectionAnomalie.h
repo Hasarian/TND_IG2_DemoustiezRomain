@@ -1,9 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include "../biblioInteg/simpson.h"
-
 #define LIGNEMAX 40
 #define COLONNEMAX 10
 #define DELIMITEUR_LINE_CSVFILE ','

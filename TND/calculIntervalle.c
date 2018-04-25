@@ -1,5 +1,4 @@
-#include "detectionAnomalie.h"
-#include <fenv.h>
+#include "header.h"
 
 //int main(int argc, char *argv[]) { 
 //	//float moyenne = 44.21053;

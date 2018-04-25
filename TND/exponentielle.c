@@ -1,4 +1,4 @@
-#include "ax.h"
+#include "header.h"
 
 double resultat(double reste, int nbLimites, int nbIterations) {
 	int i;

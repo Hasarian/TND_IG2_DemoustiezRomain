@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 #define NBMAXPOINTS 30
+#define INTERVALLE_RECHERCHE_MAX 0.00001
 
 typedef struct coordonneePoint CoordonneePoint;
 struct coordonneePoint
@@ -11,9 +9,9 @@ struct coordonneePoint
 };
 
 double fi(double x, int nbPoints, int i, CoordonneePoint coordonneesPoint[]);
-double dercyptageShamir();
+void decrypteCleShamir();
 
 // Samy
 int obtentionDesPoints(CoordonneePoint coordonneesPoint[]);
 double P(double x, int nbPoints, CoordonneePoint coordonneesPoint[]);
-void calculeMaxPolynomeLagrange(void);
+void calculeMaxPuissance(void);
