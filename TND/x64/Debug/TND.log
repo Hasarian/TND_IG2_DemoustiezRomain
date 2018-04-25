@@ -1,16 +1,1 @@
-﻿  test.c
-  ShamirBySamy.c
-  Shamir.c
-  exponentielle.c
-  power.c
-  fi.c
-  detectionAnomalie.c
-  decryptshamir.c
-  calculIntervalle.c
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(43): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
-  c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(43): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
-  c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(43): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
-  c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(43): note: cet argument est utilisé comme taille de mémoire tampon
-  ax.c
-  Génération de code en cours...
-  TND.vcxproj -> C:\Users\SamyD\Documents\GitHub\TND_IG2_DemoustiezRomain\x64\Debug\TND.exe
+﻿..\biblio_Erreur\erreur.obj : fatal error LNK1112: type d'ordinateur module 'x86' en conflit avec le type d'ordinateur cible 'x64'

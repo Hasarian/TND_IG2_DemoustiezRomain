@@ -128,6 +128,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\OneDrive - Haute Ecole de Namur-Liege-Luxembourg\2e\TND\fiModele.csv" />
+    <None Include="fiSam.csv" />
+    <None Include="fiTest.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="..\biblio_Erreur\erreur.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

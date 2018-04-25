@@ -1,0 +1,6 @@
+﻿  calculIntervalle.c
+d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(45): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
+  d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(45): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
+  d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(45): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
+  d:\git\tnd_ig2_demoustiezromain\tnd\calculintervalle.c(45): note: cet argument est utilisé comme taille de mémoire tampon
+  TND.vcxproj -> D:\git\TND_IG2_DemoustiezRomain\Debug\TND.exe

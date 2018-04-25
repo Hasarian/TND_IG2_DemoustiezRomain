@@ -26,35 +26,40 @@ float calculIntervalle(float moyenne, float variance, int n, float coefficiantAl
 	return intervalleInf;
 }
 
-float traitementBaseModele(int tailleEchantillon, float lowerControlLimit, float upperControlLimit, float lowerWarningLimit, float upperWarningLimit, float dataAEvaluer)
+void detecteAnomalies(int tailleEchantillon, double lowerControlLimit, double upperControlLimit, double lowerWarningLimit, double upperWarningLimit)
 {
 	int numEchantillon;
 	int tailleReelleEchantillon;
 	double sommeEchantillion;
 	FILE* ficsv;
-	fopen_s(&ficsv, "fiModele.csv", "r");
+	fopen_s(&ficsv, "fiSam.csv", "r");
 	if (ficsv != NULL) {
+		numEchantillon = 1;
 		while (!feof(ficsv)) {
-			numEchantillon = 1;
 			tailleReelleEchantillon = 0;
 			sommeEchantillion = 0;
 			while (tailleReelleEchantillon < tailleEchantillon && !feof(ficsv)) {
 				double xi;
-				char poubelle;
+				char buffer;
 				fscanf_s(ficsv, "%lf", &xi);
-				fscanf_s(ficsv, "%c", &poubelle);
+				fscanf_s(ficsv, "%c", &buffer);
 				sommeEchantillion += xi;
 				tailleReelleEchantillon++;
+				printf_s("échantillon %d - %c\n", numEchantillon, buffer);
 			}
-			double xBarre = sommeEchantillion / tailleReelleEchantillon;
+			double xBarre = sommeEchantillion / (double) tailleReelleEchantillon;
 			char * str;
 			if (xBarre < lowerWarningLimit || xBarre > upperWarningLimit) {
 				str = "nous sommes endehors de l intervalle de surveillance";
 				if (xBarre < lowerControlLimit || xBarre > upperControlLimit) {
 					str = "valeurs erronees";
 				}
-				printf("Echantillon %d composé de %d valeur : %s", numEchantillon, tailleReelleEchantillon, str);
 			}
+			else {
+				str = "ok";
+			}
+
+			printf_s("Echantillon %d composé de %d valeur (xBarre : %lf) : %s\n", numEchantillon, tailleReelleEchantillon, xBarre, str);
 			numEchantillon++;
 		}
 		fclose(ficsv);
@@ -62,8 +67,5 @@ float traitementBaseModele(int tailleEchantillon, float lowerControlLimit, float
 	else {
 		puts("Le fichier n\'existe pas !");
 	}
-
-	
-	return 0.0f;
 }
 

@@ -24,7 +24,7 @@ void main(void)
 			break;
 		case 4:// determineModeleAnomalies();
 			break;
-		case 5: //detecteAnomalies();
+		case 5: detecteAnomalies(1, 37.26,51.16,38.92,49.50);
 			break;
 		}
 		do

@@ -6,6 +6,6 @@
 typedef int TypeTable;
 
 float calculIntervalle(float moyenne, float variance, int n, float coefficiantAlpha, float *upperLimit);
-float traitementBaseModele(int tailleEchantillon, float lowerControlLimit, float upperControlLimit, float lowerWarningLimit, float upperWarningLimit, float dataAEvaluer);
+void detecteAnomalies(int tailleEchantillon, double lowerControlLimit, double upperControlLimit, double lowerWarningLimit, double upperWarningLimit);
 double* table_cstr(Fonction f);
 double valeurAlpha(double alpha, TypeTable* tableNormale[]);
