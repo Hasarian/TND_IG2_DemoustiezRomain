@@ -111,6 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\biblioInteg\simpson.h" />
     <ClInclude Include="ax.h" />
     <ClInclude Include="detectionAnomalie.h" />
     <ClInclude Include="header.h" />
@@ -124,7 +125,9 @@
     <ClCompile Include="power.c" />
     <ClCompile Include="exponentielle.c" />
     <ClCompile Include="Shamir.c" />
+    <ClCompile Include="table_cstr.c" />
     <ClCompile Include="test.c" />
+    <ClCompile Include="valeurAlpha.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\OneDrive - Haute Ecole de Namur-Liege-Luxembourg\2e\TND\fiModele.csv" />
@@ -132,6 +135,7 @@
     <None Include="fiTest.csv" />
   </ItemGroup>
   <ItemGroup>
+    <Object Include="..\biblioInteg\simpsonGeneralisation.obj" />
     <Object Include="..\biblio_Erreur\erreur.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

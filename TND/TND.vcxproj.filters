@@ -36,6 +36,9 @@
     <ClInclude Include="header.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="..\biblioInteg\simpson.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Shamir.c">
@@ -62,6 +65,12 @@
     <ClCompile Include="main.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="table_cstr.c">
+      <Filter>Fichiers sources\Romain</Filter>
+    </ClCompile>
+    <ClCompile Include="valeurAlpha.c">
+      <Filter>Fichiers sources\Romain</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\OneDrive - Haute Ecole de Namur-Liege-Luxembourg\2e\TND\fiModele.csv">
@@ -76,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <Object Include="..\biblio_Erreur\erreur.obj">
+      <Filter>Fichiers sources</Filter>
+    </Object>
+    <Object Include="..\biblioInteg\simpsonGeneralisation.obj">
       <Filter>Fichiers sources</Filter>
     </Object>
   </ItemGroup>

@@ -22,9 +22,9 @@ void main(void)
 			break;
 		case 3: calculeExpBaseA();
 			break;
-		case 4:// determineModeleAnomalies();
+		case 4://determineModeleAnomalies();
 			break;
-		case 5: detecteAnomalies(1, 37.26,51.16,38.92,49.50);
+		case 5: detecteAnomalies();
 			break;
 		}
 		do

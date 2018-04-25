@@ -4,7 +4,9 @@
 #define DOUBLETOINT 10000
 typedef int TypeTable;
 
-double calculIntervalle(double moyenne, double variance, double n, double coefficiantAlpha, double *upperLimit);
-void detecteAnomalies(int tailleEchantillon, double lowerControlLimit, double upperControlLimit, double lowerWarningLimit, double upperWarningLimit);
+void detecteAnomalies(void);
+double calculIntervalle(double moyenne, double variance, int n, double coefficiantAlpha, double *upperLimit);
+void  traitementBaseModele(int tailleEchantillon, double lowerControlLimit, double upperControlLimit, double lowerWarningLimit, double upperWarningLimit);
 double* table_cstr(Fonction f);
 double valeurAlpha(double alpha, TypeTable* tableNormale[]);
+double fLoiNormale(double x);
