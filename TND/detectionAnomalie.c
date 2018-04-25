@@ -1,7 +1,8 @@
 #include "header.h"
 
 double fLoiNormale(double x) {
-	return (pow(exp(x), 2) / 2) / (sqrt(2 * M_PI));
+	double expx = exp(x);
+	return (expx * expx / 2) / (sqrt(2 * M_PI));
 }
 
 void detecteAnomalies(void){
@@ -20,7 +21,7 @@ void detecteAnomalies(void){
 	double upperControlLimit;
 	double lowerWarningLimit;
 	double upperWarningLimit;
-	TypeTable * tableNormale;
+	TypeTable * tableNormale[COLONNEMAX];
 
 	FILE* dataFile;
 
@@ -31,7 +32,15 @@ void detecteAnomalies(void){
 
 	n = 0;
 
-	tableNormale = table_cstr(fLoiNormale);
+	*tableNormale = table_cstr(fLoiNormale);
+
+	for(int iLigne = 0; iLigne < LIGNEMAX; iLigne++) {
+		for(int iCol = 0; iCol < COLONNEMAX; iCol++){
+			printf("%lf", tableNormale[iLigne][iCol]);
+		}
+		printf("\n");
+	}
+
 	fopen_s(&dataFile, "fiSam.csv","r");
 	if (dataFile != NULL) {
 		fscanf_s(dataFile, "%lf", &xi);
@@ -164,7 +173,7 @@ double traitementBaseModeles(double alpha, TypeTable* tableNormale[])
 	}
 }
 
-double valeurAlpha(double alpha, TypeTable* tableNormale[])
+double valeurAlpha(double alpha, TypeTable tableNormale[][COLONNEMAX])
 {
 	int interpolation = 0;
 	int zoneNormalisee = (1 - alpha / 200) * DOUBLETOINT;

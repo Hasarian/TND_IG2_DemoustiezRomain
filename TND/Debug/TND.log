@@ -1,35 +1,26 @@
-﻿  test.c
-  power.c
-  main.c
-  detectionAnomalie.c
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(50): warning C4047: 'fonction' : les niveaux d'indirection de 'TypeTable **' et de 'TypeTable *' sont différents
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(50): warning C4024: 'valeurAlpha' : types différents pour le paramètre formel et réel 2
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(51): warning C4047: 'fonction' : les niveaux d'indirection de 'TypeTable **' et de 'TypeTable *' sont différents
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(51): warning C4024: 'valeurAlpha' : types différents pour le paramètre formel et réel 2
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(40): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(40): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(40): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(40): note: cet argument est utilisé comme taille de mémoire tampon
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(63): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(64): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(65): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(86): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(86): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(86): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(86): note: cet argument est utilisé comme taille de mémoire tampon
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(118): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(128): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(132): warning C4047: 'return' : les niveaux d'indirection de 'TypeTable *' et de 'TypeTable [40][10]' sont différents
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(139): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(170): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-  calculIntervalle.c
-  ax.c
-  Shamir.c
-  Génération de code en cours...
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(132): warning C4172: retourne l'adresse d'une variable locale ou : tabNormale temporaire
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(165): warning C4715: 'traitementBaseModeles' : les chemins de contrôle ne retournent pas tous une valeur
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(196): warning C4715: 'valeurAlpha' : les chemins de contrôle ne retournent pas tous une valeur
-  LINK : D:\git\TND_IG2_DemoustiezRomain\Debug\TND.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
-erreur.obj : warning LNK4099: PDB 'vc140.pdb' n'a pu être trouvé avec 'erreur.obj' ou sur 'D:\git\TND_IG2_DemoustiezRomain\Debug\vc140.pdb' ; l'objet sera lié sans informations de débogage
-simpsonGeneralisation.obj : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'simpsonGeneralisation.obj' ou sur 'D:\git\TND_IG2_DemoustiezRomain\Debug\vc120.pdb' ; l'objet sera lié sans informations de débogage
+﻿  detectionAnomalie.c
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): warning C4047: 'fonction' : les niveaux d'indirection de 'TypeTable (*)[10]' et de 'TypeTable *[10]' sont différents
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): warning C4024: 'valeurAlpha' : types différents pour le paramètre formel et réel 2
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(60): warning C4047: 'fonction' : les niveaux d'indirection de 'TypeTable (*)[10]' et de 'TypeTable *[10]' sont différents
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(60): warning C4024: 'valeurAlpha' : types différents pour le paramètre formel et réel 2
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(39): warning C4477: 'printf' : la chaîne de format '%lf' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'TypeTable'
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(49): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(49): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(49): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(49): note: cet argument est utilisé comme taille de mémoire tampon
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(72): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(73): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(74): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(95): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(95): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(95): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(95): note: cet argument est utilisé comme taille de mémoire tampon
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(127): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(137): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(141): warning C4047: 'return' : les niveaux d'indirection de 'TypeTable *' et de 'TypeTable [40][10]' sont différents
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(148): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(179): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(174): warning C4715: 'traitementBaseModeles' : les chemins de contrôle ne retournent pas tous une valeur
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(205): warning C4715: 'valeurAlpha' : les chemins de contrôle ne retournent pas tous une valeur
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(141): warning C4172: retourne l'adresse d'une variable locale ou : tabNormale temporaire
   TND.vcxproj -> D:\git\TND_IG2_DemoustiezRomain\Debug\TND.exe
