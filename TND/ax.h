@@ -1,6 +1,8 @@
 #pragma once
 #define LIMITE 0.5
 
+double obtenirA();
+double obtenirX();
 /*Alex*/
 double exponentielle(int nbIterationsTaylor, double argument);
 double intPower(double argument, int nbIterations);

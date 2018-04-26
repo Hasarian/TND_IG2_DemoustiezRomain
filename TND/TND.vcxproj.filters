@@ -13,15 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Fichiers sources\Alexandre">
-      <UniqueIdentifier>{ba1bed27-241a-4893-b77b-714c08e981b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Samuel">
-      <UniqueIdentifier>{ee322403-d61c-46f8-95b3-4a051ee5b839}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Romain">
-      <UniqueIdentifier>{1d2e72f1-5df5-467a-9a3b-6f17f1c03d34}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shamir.h">
@@ -53,26 +44,8 @@
     <ClCompile Include="detectionAnomalie.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="power.c">
-      <Filter>Fichiers sources\Samuel</Filter>
-    </ClCompile>
-    <ClCompile Include="exponentielle.c">
-      <Filter>Fichiers sources\Alexandre</Filter>
-    </ClCompile>
-    <ClCompile Include="calculIntervalle.c">
-      <Filter>Fichiers sources\Alexandre</Filter>
-    </ClCompile>
-    <ClCompile Include="test.c">
-      <Filter>Fichiers sources\Romain</Filter>
-    </ClCompile>
     <ClCompile Include="main.c">
       <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="table_cstr.c">
-      <Filter>Fichiers sources\Romain</Filter>
-    </ClCompile>
-    <ClCompile Include="valeurAlpha.c">
-      <Filter>Fichiers sources\Romain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

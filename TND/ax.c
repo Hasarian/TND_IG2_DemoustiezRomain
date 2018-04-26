@@ -1,16 +1,7 @@
 #include "header.h"
 
-
-void calculeExpBaseA(void) {
-	bool negatif = false;
+double obtenirA() {
 	double a;
-	double x;
-	int nbDecimales;
-	double argument;
-	int nbLimites;
-	double reste;
-	int nbIterations;
-	double res;
 
 	do {
 		printf("Pour a^x -> veuillez entrer le a (positif) : ");
@@ -18,14 +9,21 @@ void calculeExpBaseA(void) {
 		vider();
 	} while (a < 0);
 
+	return a;
+}
+
+double obtenirX() {
+	double x;
+
 	printf("Pour a^x -> veuillez entrer le x : ");
 	scanf_s("%lf", &x);
 	vider();
 
-	if (x < 0) {
-		x *= -1;
-		negatif = true;
-	}
+	return x;
+}
+
+int obtenirPrecision() {
+	int nbDecimales;
 
 	do {
 		printf("Pour la précision, veuillez entre un nombre positif de décimales : ");
@@ -33,6 +31,29 @@ void calculeExpBaseA(void) {
 		vider();
 	} while (nbDecimales < 0);
 
+	return nbDecimales;
+}
+
+void calculeExpBaseA(void) {
+	bool negatif = false;
+	double a;
+	double x;
+	double argument;
+	double reste;
+	double res;
+	int nbDecimales;
+	int nbLimites;
+	int nbIterations;
+
+	a = obtenirA();
+	x = obtenirX();
+
+	if (x < 0) {
+		x *= -1;
+		negatif = true;
+	}
+
+	nbDecimales = obtenirPrecision();
 	argument = (x * log(a));
 
 	nbLimites = (int)(argument / LIMITE);
@@ -45,7 +66,7 @@ void calculeExpBaseA(void) {
 		res = 1 / res;
 
 	afficheDecimales(res, nbDecimales);
-	printf("\n");
+	printf_s("\n");
 }
 
 int degre(int nbDecimales, int nbLimites) {

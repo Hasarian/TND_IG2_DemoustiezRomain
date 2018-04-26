@@ -1,18 +1,37 @@
 #include "header.h"
 
 double fLoiNormale(double x) {
-	//double expx = exp(x);
-	//return (expx * expx / 2) / (sqrt(2 * M_PI));
 	return exp(-pow(x, 2) / 2) / sqrt(2 * M_PI);
 
+}
+
+double obtenirTailleEchantillon(void) {
+	int tailleEchantillon;
+
+	do {
+		printf_s("Entrez la taille de l'echantillon : ");
+		scanf_s("%d", &tailleEchantillon);
+	} while (tailleEchantillon < 1);
+	
+	return tailleEchantillon;
+}
+
+double obtenirAlpha(char * type) {
+	double alpha;
+	do {
+		printf_s("Entrez la valeur de alpha %s (en %%) : ", type);
+		scanf_s("%lf", &alpha);
+	} while (alpha < 0);
+
+	return alpha;
 }
 
 void detecteAnomalies(void){
 	int tailleEchantillon;
 	int n;
-	double alphaControl = 1;
+	double alphaControl;
 	double coefficientAlphaControl;
-	double alphaWarning = 5;
+	double alphaWarning;
 	double coefficientAlphaWarning;
 	double xi;
 	double sommeXi = 0;
@@ -24,24 +43,13 @@ void detecteAnomalies(void){
 	double lowerWarningLimit;
 	double upperWarningLimit;
 	TypeTable tableNormale[LIGNEMAX][COLONNEMAX] = { {0} };
-
 	FILE* dataFile;
 
-	do {
-		printf("Entrez la taille de l'echantillon : ");
-		scanf_s("%d", &tailleEchantillon);
-	} while (tailleEchantillon < 1);
-
+	tailleEchantillon = obtenirTailleEchantillon();
+	alphaControl = obtenirAlpha("controle");
+	alphaWarning = obtenirAlpha("warning");
 	n = 0;
-
-	table_cstr(fLoiNormale, &tableNormale);
-
-	for(int iLigne = 0; iLigne < LIGNEMAX; iLigne++) {
-		for(int iCol = 0; iCol < COLONNEMAX; iCol++){
-			printf("%d | ", tableNormale[iLigne][iCol]);
-		}
-		printf("\n");
-	}
+	table_cstr(fLoiNormale, tableNormale);
 
 	fopen_s(&dataFile, "fiSamModele.csv","r");
 	if (dataFile != NULL) {
@@ -117,7 +125,9 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 				str = "ok";
 			}
 
-			printf_s("Echantillon %d composé de %d valeur (xBarre : %lf) : %s\n", numEchantillon, tailleReelleEchantillon, xBarre, str);
+			printf_s("Echantillon %d - composé de %d valeur(s) - (xBarre : ", numEchantillon, tailleReelleEchantillon);
+			afficheDecimales(xBarre, 5);
+			printf_s(") : %s\n", str);
 			numEchantillon++;
 		}
 		fclose(ficsv);
@@ -147,30 +157,6 @@ void table_cstr(Fonction f, TypeTable tabNormale[][COLONNEMAX])
 	}
 	return tabNormale;
 }
-
-
-//TypeTable* table_cstr(Fonction f)
-//{
-//	int nbPoints = 3;
-//	double dernierResultat = 0.5;
-//	TypeTable tabNormale[LIGNEMAX][COLONNEMAX];
-//	tabNormale[0][0] = dernierResultat;
-//	double bInf = 0;
-//	double bSup, resultat;
-//	for (int iLigne = 0; iLigne < LIGNEMAX; iLigne++)
-//	{
-//		for (int iColonne = 0; iColonne < COLONNEMAX; iColonne++)
-//		{
-//			bSup = iLigne / 10 + iColonne / 100;
-//			resultat = calculSimpson(nbPoints, bInf, bSup, f);
-//			dernierResultat += resultat;
-//			tabNormale[iLigne][iColonne] = resultat*DOUBLETOINT;
-//			bInf = bSup;
-//		}
-//	}
-//	return tabNormale;
-//}
-
 
 double valeurAlpha(double alpha, TypeTable tableNormale[LIGNEMAX][COLONNEMAX])
 {

@@ -1,19 +1,19 @@
 ﻿  detectionAnomalie.c
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(37): warning C4048: indices de tableau différents : 'TypeTable (*)[10]' et 'TypeTable (*)[40][10]'
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(51): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
-  c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(51): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
-  c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(51): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
-  c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(51): note: cet argument est utilisé comme taille de mémoire tampon
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(98): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
-  c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(98): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
-  c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(98): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
-  c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(98): note: cet argument est utilisé comme taille de mémoire tampon
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(105): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(106): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(107): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(108): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(109): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(134): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(148): warning C4098: 'table_cstr' : fonction 'void' retournant une valeur
-c:\users\samyd\documents\github\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(178): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-  TND.vcxproj -> C:\Users\SamyD\Documents\GitHub\TND_IG2_DemoustiezRomain\Debug\TND.exe
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(48): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): note: cet argument est utilisé comme taille de mémoire tampon
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(106): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(106): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(106): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(106): note: cet argument est utilisé comme taille de mémoire tampon
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(113): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(114): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(115): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(116): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(117): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(144): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(158): warning C4098: 'table_cstr' : fonction 'void' retournant une valeur
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(164): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+  TND.vcxproj -> D:\git\TND_IG2_DemoustiezRomain\Debug\TND.exe
