@@ -51,7 +51,7 @@ void detecteAnomalies(void){
 	n = 0;
 	table_cstr(fLoiNormale, tableNormale);
 
-	fopen_s(&dataFile, "fiSamModele.csv","r");
+	fopen_s(&dataFile, CSV_FILE,"r");
 	if (dataFile != NULL) {
 		fscanf_s(dataFile, "%lf", &xi);
 		while (!feof(dataFile)) {
@@ -65,7 +65,6 @@ void detecteAnomalies(void){
 		fclose(dataFile);
 
 		moyenne = sommeXi / n;
-
 		variance = sommeXiCarre / n - (moyenne * moyenne);
 		coefficientAlphaControl = valeurAlpha(alphaControl, tableNormale);
 		coefficientAlphaWarning = valeurAlpha(alphaWarning, tableNormale);
@@ -93,7 +92,7 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 	int tailleReelleEchantillon;
 	double sommeEchantillon;
 	FILE* ficsv;
-	fopen_s(&ficsv, "fiSam.csv", "r");
+	fopen_s(&ficsv, CSV_FILE, "r");
 	if (ficsv != NULL) {
 		numEchantillon = 1;
 		double xi;
