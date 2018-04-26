@@ -1,26 +1,24 @@
-﻿  Shamir.c
-  main.c
+﻿  main.c
   detectionAnomalie.c
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(48): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
   d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
   d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
   d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): note: cet argument est utilisé comme taille de mémoire tampon
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(106): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(106): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(106): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(106): note: cet argument est utilisé comme taille de mémoire tampon
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(105): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(105): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(105): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
+  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(105): note: cet argument est utilisé comme taille de mémoire tampon
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(112): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(113): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(114): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(115): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
 d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(116): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(117): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(144): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(158): warning C4098: 'table_cstr' : fonction 'void' retournant une valeur
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(164): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(143): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(157): warning C4098: 'table_cstr' : fonction 'void' retournant une valeur
+d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(163): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
   ax.c
+d:\git\tnd_ig2_demoustiezromain\tnd\ax.c(59): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+  Shamir.c
   Génération de code en cours...
-  LINK : D:\git\TND_IG2_DemoustiezRomain\Debug\TND.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
-erreur.obj : warning LNK4099: PDB 'vc140.pdb' n'a pu être trouvé avec 'erreur.obj' ou sur 'D:\git\TND_IG2_DemoustiezRomain\Debug\vc140.pdb' ; l'objet sera lié sans informations de débogage
-simpsonGeneralisation.obj : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'simpsonGeneralisation.obj' ou sur 'D:\git\TND_IG2_DemoustiezRomain\Debug\vc120.pdb' ; l'objet sera lié sans informations de débogage
   TND.vcxproj -> D:\git\TND_IG2_DemoustiezRomain\Debug\TND.exe

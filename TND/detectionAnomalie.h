@@ -2,7 +2,8 @@
 #define COLONNEMAX 10
 
 #define DOUBLETOINT 100000
-#define FI_ "fiSam.csv"
+#define FI_MODELE "fiSamModele.csv"
+#define FI_TEST "fiSam.csv"
 typedef int TypeTable;
 
 double obtenirTailleEchantillon(void);

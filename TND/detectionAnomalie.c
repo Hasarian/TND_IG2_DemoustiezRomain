@@ -51,7 +51,7 @@ void detecteAnomalies(void){
 	n = 0;
 	table_cstr(fLoiNormale, tableNormale);
 
-	fopen_s(&dataFile, CSV_FILE,"r");
+	fopen_s(&dataFile, FI_MODELE,"r");
 	if (dataFile != NULL) {
 		fscanf_s(dataFile, "%lf", &xi);
 		while (!feof(dataFile)) {
@@ -92,7 +92,7 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 	int tailleReelleEchantillon;
 	double sommeEchantillon;
 	FILE* ficsv;
-	fopen_s(&ficsv, CSV_FILE, "r");
+	fopen_s(&ficsv, FI_TEST, "r");
 	if (ficsv != NULL) {
 		numEchantillon = 1;
 		double xi;
