@@ -1,7 +1,7 @@
 #define LIGNEMAX 40
 #define COLONNEMAX 10
 
-#define DOUBLETOINT 10000
+#define DOUBLETOINT 100000
 typedef int TypeTable;
 
 void detecteAnomalies(void);

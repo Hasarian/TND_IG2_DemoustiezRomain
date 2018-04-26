@@ -39,7 +39,7 @@ void main(void)
 
 void menu(void)
 {
-	printf_s("Choississez une fonctionnalité :\n ");
+	printf_s("Choississez une fonctionnalite :\n");
 	printf_s("1. Decryptage de la cle de Shamir\n");
 	printf_s("2. Resultats test effort\n");
 	printf_s("3. Calcul de a exposant x\n");

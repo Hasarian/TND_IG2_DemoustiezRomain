@@ -10,9 +10,9 @@ double fLoiNormale(double x) {
 void detecteAnomalies(void){
 	int tailleEchantillon;
 	int n;
-	double alphaControl = 0.01;
+	double alphaControl = 1;
 	double coefficientAlphaControl;
-	double alphaWarning = 0.05;
+	double alphaWarning = 5;
 	double coefficientAlphaWarning;
 	double xi;
 	double sommeXi = 0;
@@ -28,7 +28,7 @@ void detecteAnomalies(void){
 	FILE* dataFile;
 
 	do {
-		printf("Entrez la taille de l'échantillon : ");
+		printf("Entrez la taille de l'echantillon : ");
 		scanf_s("%d", &tailleEchantillon);
 	} while (tailleEchantillon < 1);
 
@@ -102,11 +102,11 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 			}
 			double xBarre = sommeEchantillon / (double)tailleReelleEchantillon;
 			char * str;
-			int xBarreInt = xBarre * 100000;
-			int lowerWarningLimitInt = lowerWarningLimit * 100000;
-			int upperWarningLimitInt = upperWarningLimit * 100000;
-			int lowerControlLimitInt = lowerControlLimit * 100000;
-			int upperControlLimitInt = upperControlLimit * 100000;
+			int xBarreInt = xBarre * DOUBLETOINT;
+			int lowerWarningLimitInt = lowerWarningLimit * DOUBLETOINT;
+			int upperWarningLimitInt = upperWarningLimit * DOUBLETOINT;
+			int lowerControlLimitInt = lowerControlLimit * DOUBLETOINT;
+			int upperControlLimitInt = upperControlLimit * DOUBLETOINT;
 			if (xBarreInt < lowerWarningLimitInt || xBarreInt > upperWarningLimitInt) {
 				str = "nous sommes endehors de l intervalle de surveillance";
 				if (xBarreInt < lowerControlLimitInt || xBarreInt > upperControlLimitInt) {
@@ -175,7 +175,7 @@ void table_cstr(Fonction f, TypeTable tabNormale[][COLONNEMAX])
 double valeurAlpha(double alpha, TypeTable tableNormale[LIGNEMAX][COLONNEMAX])
 {
 	double interpolation = 0;
-	int zoneNormalisee = (1 - alpha/2) * DOUBLETOINT;
+	int zoneNormalisee = (1 - alpha/200) * DOUBLETOINT;
 	int iLigne = 0;
 	while (iLigne < LIGNEMAX - 1 && tableNormale[iLigne+1][0] <= zoneNormalisee)
 	{
