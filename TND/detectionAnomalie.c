@@ -43,7 +43,7 @@ void detecteAnomalies(void){
 		printf("\n");
 	}
 
-	fopen_s(&dataFile, "fiModele.csv","r");
+	fopen_s(&dataFile, "fiSamModele.csv","r");
 	if (dataFile != NULL) {
 		fscanf_s(dataFile, "%lf", &xi);
 		while (!feof(dataFile)) {
@@ -85,7 +85,7 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 	int tailleReelleEchantillon;
 	double sommeEchantillon;
 	FILE* ficsv;
-	fopen_s(&ficsv, "fiTest.csv", "r");
+	fopen_s(&ficsv, "fiSam.csv", "r");
 	if (ficsv != NULL) {
 		numEchantillon = 1;
 		double xi;
@@ -102,11 +102,11 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 			}
 			double xBarre = sommeEchantillon / (double)tailleReelleEchantillon;
 			char * str;
-			int xBarreInt = xBarre * DOUBLETOINT;
-			int lowerWarningLimitInt = lowerWarningLimit * DOUBLETOINT;
-			int upperWarningLimitInt = upperWarningLimit * DOUBLETOINT;
-			int lowerControlLimitInt = lowerControlLimit * DOUBLETOINT;
-			int upperControlLimitInt = upperControlLimit * DOUBLETOINT;
+			int xBarreInt = xBarre * 100000;
+			int lowerWarningLimitInt = lowerWarningLimit * 100000;
+			int upperWarningLimitInt = upperWarningLimit * 100000;
+			int lowerControlLimitInt = lowerControlLimit * 100000;
+			int upperControlLimitInt = upperControlLimit * 100000;
 			if (xBarreInt < lowerWarningLimitInt || xBarreInt > upperWarningLimitInt) {
 				str = "nous sommes endehors de l intervalle de surveillance";
 				if (xBarreInt < lowerControlLimitInt || xBarreInt > upperControlLimitInt) {
