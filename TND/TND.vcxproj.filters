@@ -39,6 +39,9 @@
     <ClInclude Include="..\biblioInteg\simpson.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="..\biblio_Erreur\erreur.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Shamir.c">
@@ -80,6 +83,9 @@
       <Filter>Fichiers de ressources</Filter>
     </None>
     <None Include="fiSam.csv">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+    <None Include="fiSamModele.csv">
       <Filter>Fichiers de ressources</Filter>
     </None>
   </ItemGroup>
