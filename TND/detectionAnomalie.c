@@ -2,10 +2,9 @@
 
 double fLoiNormale(double x) {
 	return exp(-pow(x, 2) / 2) / sqrt(2 * M_PI);
-
 }
 
-double obtenirTailleEchantillon(void) {
+int obtenirTailleEchantillon(void) {
 	int tailleEchantillon;
 
 	do {
@@ -28,7 +27,7 @@ double obtenirAlpha(char * type) {
 
 void detecteAnomalies(void){
 	int tailleEchantillon;
-	int n;
+	int tailleDuModele;
 	double alphaControl;
 	double coefficientAlphaControl;
 	double alphaWarning;
@@ -48,7 +47,7 @@ void detecteAnomalies(void){
 	tailleEchantillon = obtenirTailleEchantillon();
 	alphaControl = obtenirAlpha("controle");
 	alphaWarning = obtenirAlpha("warning");
-	n = 0;
+	tailleDuModele = 0;
 	table_cstr(fLoiNormale, tableNormale);
 
 	fopen_s(&dataFile, FI_MODELE,"r");
@@ -56,25 +55,26 @@ void detecteAnomalies(void){
 		fscanf_s(dataFile, "%lf", &xi);
 		while (!feof(dataFile)) {
 			char buffer;
-			fscanf_s(dataFile, "%c", &buffer);
+			fscanf_s(dataFile, "%c", &buffer, 1);
 			sommeXi += xi;
 			sommeXiCarre += xi * xi;
 			fscanf_s(dataFile, "%lf", &xi);
-			n++;
+			tailleDuModele++;
 		}
 		fclose(dataFile);
 
-		moyenne = sommeXi / n;
-		variance = sommeXiCarre / n - (moyenne * moyenne);
+		moyenne = sommeXi / tailleDuModele;
+		variance = sommeXiCarre / tailleDuModele - (moyenne * moyenne);
 		coefficientAlphaControl = valeurAlpha(alphaControl, tableNormale);
 		coefficientAlphaWarning = valeurAlpha(alphaWarning, tableNormale);
-		lowerControlLimit = calculIntervalle(moyenne, variance, n, coefficientAlphaControl, &upperControlLimit);
-		lowerWarningLimit = calculIntervalle(moyenne, variance, n, coefficientAlphaWarning, &upperWarningLimit);
+		lowerControlLimit = calculIntervalle(moyenne, variance, tailleEchantillon, coefficientAlphaControl, &upperControlLimit);
+		lowerWarningLimit = calculIntervalle(moyenne, variance, tailleEchantillon, coefficientAlphaWarning, &upperWarningLimit);
 		traitementBaseModele(tailleEchantillon, lowerControlLimit, upperControlLimit, lowerWarningLimit, upperWarningLimit);
 	}
 	else {
 		puts("Impossible d\'ouvrir le fichier !");
 	}
+
 }
 
 double calculIntervalle(double moyenne, double variance, int n, double coefficiantAlpha, double *upperLimit)
@@ -86,6 +86,14 @@ double calculIntervalle(double moyenne, double variance, int n, double coefficia
 	return intervalleInf;
 }
 
+void afficheLimites(double lowerLimit, double upperLimit, char * type) {
+	printf_s("La limite de %s est : [", type);
+	afficheDecimales(lowerLimit, 5);
+	printf_s(", ");
+	afficheDecimales(upperLimit, 5);
+	printf_s("]\n");
+}
+
 void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, double upperControlLimit, double lowerWarningLimit, double upperWarningLimit)
 {
 	int numEchantillon;
@@ -94,26 +102,37 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 	FILE* ficsv;
 	fopen_s(&ficsv, FI_TEST, "r");
 	if (ficsv != NULL) {
-		numEchantillon = 1;
 		double xi;
+		int lowerWarningLimitInt;
+		int upperWarningLimitInt;
+		int lowerControlLimitInt;
+		int upperControlLimitInt;
+
+		lowerWarningLimitInt = (int) (lowerWarningLimit * DOUBLETOINT);
+		upperWarningLimitInt = (int) (upperWarningLimit * DOUBLETOINT);
+		lowerControlLimitInt = (int) (lowerControlLimit * DOUBLETOINT);
+		upperControlLimitInt = (int) (upperControlLimit * DOUBLETOINT);
+
+		afficheLimites(lowerControlLimit, upperControlLimit, "controle");
+		afficheLimites(lowerWarningLimit, upperWarningLimit, "surveillance");
+		numEchantillon = 1;
+		
 		fscanf_s(ficsv, "%lf", &xi);
 		while (!feof(ficsv)) {
 			tailleReelleEchantillon = 0;
 			sommeEchantillon = 0;
 			while (tailleReelleEchantillon < tailleEchantillon && !feof(ficsv)) {
 				char buffer;
-				fscanf_s(ficsv, "%c", &buffer);
+				fscanf_s(ficsv, "%c", &buffer, 1);
 				sommeEchantillon += xi;
 				tailleReelleEchantillon++;
 				fscanf_s(ficsv, "%lf", &xi);
 			}
 			double xBarre = sommeEchantillon / (double)tailleReelleEchantillon;
 			char * str;
-			int xBarreInt = xBarre * DOUBLETOINT;
-			int lowerWarningLimitInt = lowerWarningLimit * DOUBLETOINT;
-			int upperWarningLimitInt = upperWarningLimit * DOUBLETOINT;
-			int lowerControlLimitInt = lowerControlLimit * DOUBLETOINT;
-			int upperControlLimitInt = upperControlLimit * DOUBLETOINT;
+			int xBarreInt;
+			xBarreInt = (int) (xBarre * DOUBLETOINT);
+
 			if (xBarreInt < lowerWarningLimitInt || xBarreInt > upperWarningLimitInt) {
 				str = "nous sommes endehors de l intervalle de surveillance";
 				if (xBarreInt < lowerControlLimitInt || xBarreInt > upperControlLimitInt) {
@@ -124,7 +143,7 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 				str = "ok";
 			}
 
-			printf_s("Echantillon %d - composé de %d valeur(s) - (xBarre : ", numEchantillon, tailleReelleEchantillon);
+			printf_s("Echantillon %3d - %d valeur(s) - (xBarre : ", numEchantillon, tailleReelleEchantillon);
 			afficheDecimales(xBarre, 5);
 			printf_s(") : %s\n", str);
 			numEchantillon++;
@@ -139,8 +158,7 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 void table_cstr(Fonction f, TypeTable tabNormale[][COLONNEMAX])
 {
 	int nbPoints = 5;
-	double dernierResultat = 0.5;
-	tabNormale[0][0] = dernierResultat;
+	double sommeProbabilitesNormalisees = 0.5;
 	double bInf = 0;
 	double bSup, resultat;
 	for (int iLigne = 0; iLigne < LIGNEMAX; iLigne++)
@@ -149,18 +167,17 @@ void table_cstr(Fonction f, TypeTable tabNormale[][COLONNEMAX])
 		{
 			bSup = (iLigne / 10.) + (iColonne / 100.);
 			resultat = calculSimpson(nbPoints, bInf, bSup, f);
-			dernierResultat += resultat;
-			tabNormale[iLigne][iColonne] = (TypeTable) (dernierResultat*DOUBLETOINT);
+			sommeProbabilitesNormalisees += resultat;
+			tabNormale[iLigne][iColonne] = (TypeTable) (sommeProbabilitesNormalisees * DOUBLETOINT);
 			bInf = bSup;
 		}
 	}
-	return tabNormale;
 }
 
 double valeurAlpha(double alpha, TypeTable tableNormale[LIGNEMAX][COLONNEMAX])
 {
 	double interpolation = 0;
-	int zoneNormalisee = (1 - alpha/200) * DOUBLETOINT;
+	int zoneNormalisee = (int) ((1 - alpha/200) * DOUBLETOINT);
 	int iLigne = 0;
 	while (iLigne < LIGNEMAX - 1 && tableNormale[iLigne+1][0] <= zoneNormalisee)
 	{

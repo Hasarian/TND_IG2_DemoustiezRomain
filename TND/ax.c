@@ -54,15 +54,18 @@ void calculeExpBaseA(void) {
 	}
 
 	nbDecimales = obtenirPrecision();
-	argument = (x * log(a));
+	if (a != 0)
+		argument = (x * log(a));
+	else
+		argument = 0;
 
 	nbLimites = ((int)argument )/ LIMITE;
 	if (argument < 0)
 	{
 		nbLimites *= -1;
 		reste = argument + nbLimites*LIMITE;
-	}else
-	reste = argument - nbLimites * LIMITE;
+	}
+	else reste = argument - nbLimites * LIMITE;
 
 	nbIterations = degre(nbDecimales, nbLimites,reste);
 	res = resultat(reste, nbLimites, nbIterations);
@@ -70,6 +73,11 @@ void calculeExpBaseA(void) {
 	if (negatif)
 		res = 1 / res;
 
+	printf_s("Le resultat de ");
+	afficheDecimales(a, nbDecimales);
+	printf_s("^");
+	afficheDecimales(x, nbDecimales);
+	printf_s(" est : ");
 	afficheDecimales(res, nbDecimales);
 	printf_s("\n");
 }
@@ -87,7 +95,7 @@ int degre(int nbDecimales, int nbLimites,double reste) {
 	while (numerateur/diviseur>niveauPrecision)
 	{
 		nbIteration++;
-		numerateur:intPower(LIMITE,i);
+		numerateur = intPower(LIMITE,i);
 		diviseur = factorielle(i+1);
 		i++;
 	}
@@ -120,16 +128,17 @@ double resultat(double reste, int nbLimites, int nbIterations) {
 	int i;
 	double terme = 1;
 	
+	if (reste == 0 && nbLimites == 0)
+		return 0;
+
 	for (i = 0; i < nbLimites; i++) {
 		double limite = (reste < 0) ? limite = -LIMITE : LIMITE;
 		double resultat = exponentielle(nbIterations, limite);
 		terme *= resultat;
-		printf("resultat: %lf\t terme: %lf\n", terme,resultat);
 	}
 
 	double resultat = exponentielle(nbIterations, reste);
 	terme *= resultat;
-	printf("exo: %lf\t terme: %lf\n", terme,resultat);
 	return terme;
 }
 

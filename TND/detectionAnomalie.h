@@ -2,11 +2,11 @@
 #define COLONNEMAX 10
 
 #define DOUBLETOINT 100000
-#define FI_MODELE "fiSamModele.csv"
-#define FI_TEST "fiSam.csv"
+#define FI_MODELE "fiModele.csv"
+#define FI_TEST "fiTest.csv"
 typedef int TypeTable;
 
-double obtenirTailleEchantillon(void);
+int obtenirTailleEchantillon(void);
 double obtenirAlpha(char * type);
 int obtenirPrecision();
 void detecteAnomalies(void);

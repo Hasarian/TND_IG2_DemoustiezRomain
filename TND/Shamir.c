@@ -1,7 +1,6 @@
 #include "header.h"
 
-int obtentionDesPoints(CoordonneePoint coordonneesPoint[]) {
-
+int obtentionDesPoints(CoordonneePoint coordonneesPoint[]){
 	int nbPoints;
 
 	do {
@@ -11,11 +10,11 @@ int obtentionDesPoints(CoordonneePoint coordonneesPoint[]) {
 	} while (nbPoints < 0);
 
 	for (int i = 0; i < nbPoints; i++) {
-		printf("Entrez la coordonnee de X pour le point %d : ", i + 1);
+		printf("Entrez la coordonnee de x%d : ", i + 1);
 		scanf_s("%lf", &coordonneesPoint[i].x);
 		getchar();
 
-		printf("Entrez la coordonnee de Y pour le point %d : ", i + 1);
+		printf("Entrez la coordonnee de y%d : ", i + 1);
 		scanf_s("%lf", &coordonneesPoint[i].y);
 		getchar();
 	}
@@ -42,7 +41,7 @@ void decrypteCleShamir()
 	CoordonneePoint coordonnees[NBMAXPOINTS];
 	int nbPoints = obtentionDesPoints(coordonnees);
 	double res = P(0, nbPoints, coordonnees);
-	printf("La clé de shamir est : ");
+	printf("La cle de shamir est : ");
 	afficheDecimales(res, 5);
 	printf("\n");
 }
@@ -69,9 +68,9 @@ void calculeMaxPuissance(void) {
 		}
 	}
 
-	printf("X = ");
+	printf_s("Le maximum du polynome est : X = ");
 	afficheDecimales(Xmax, 5);
-	printf(", Y = ");
+	printf_s(", Y = ");
 	afficheDecimales(Ymax, 5);
-	printf("\n");
+	printf_s("\n");
 }
