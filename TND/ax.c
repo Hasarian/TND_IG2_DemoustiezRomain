@@ -64,7 +64,7 @@ void calculeExpBaseA(void) {
 	}else
 	reste = argument - nbLimites * LIMITE;
 
-	nbIterations = degre(nbDecimales, nbLimites);
+	nbIterations = degre(nbDecimales, nbLimites,reste);
 	res = resultat(reste, nbLimites, nbIterations);
 
 	if (negatif)
@@ -74,31 +74,33 @@ void calculeExpBaseA(void) {
 	printf_s("\n");
 }
 
-int degre(int nbDecimales, int nbLimites) {
-	double limiteAugmentée;
+int degre(int nbDecimales, int nbLimites,double reste) {
 	int nbIteration = 1;
+	int niveauPrecision = LIMITE;
+	for (int i = 0; i < expressionDuReste(nbDecimales,nbLimites,reste); i++)
+	{
+		niveauPrecision /= 10;
+	}
 	int diviseur = 1;
-	int iterationEstimation=1; //c'est iciiiiiiiiiiiiiiiiiiiiiiiiiiii 
-	bool limiteAcceptable=false;
-
-	 do {
-		limiteAugmentée = 2;
-		int iExposant;
-		for (iExposant = 0; iExposant < iterationEstimation+1; iExposant++) {
-			limiteAugmentée *= LIMITE;
-		}
-		iterationEstimation = (int)expressionDuReste(nbDecimales, nbLimites);
-		diviseur = factorielle(nbIteration);
-		limiteAcceptable = limiteAugmentée / diviseur < LIMITE * intPower(10, -(nbIteration + 1));
-		printf("plus petit: %lf\tplus grand: %lf\n",limiteAugmentée/diviseur,LIMITE*intPower(10,-(nbIteration+1)));
+	int i = 0;
+	double numerateur = LIMITE;
+	while (numerateur/diviseur>niveauPrecision)
+	{
 		nbIteration++;
-	 } while (!limiteAcceptable);
+		numerateur:intPower(LIMITE,i);
+		diviseur = factorielle(i+1);
+		i++;
+	}
 	return nbIteration;
 }
 
-double expressionDuReste(int nbDecimales, int nbLimites) {
-
-	return nbDecimales + nbLimites*LIMITE*0.5 + (nbLimites + 1)*LIMITE / 5 + 0.31;
+int expressionDuReste(int nbDecimales, int nbLimites,double reste) {
+	if (reste != 0)
+	{
+	  nbLimites ++;
+	}
+	double argModif = nbLimites * LIMITE;
+	return (int)(nbDecimales + (argModif-0.5)*0.5 + argModif / 5 + 0.31);
 }
 
 int factorielle(int nbIteration) {
@@ -117,10 +119,12 @@ void vider(void) {
 double resultat(double reste, int nbLimites, int nbIterations) {
 	int i;
 	double terme = 1;
+	
 	for (i = 0; i < nbLimites; i++) {
-		double resultat = exponentielle(nbIterations, LIMITE);
+		double limite = (reste < 0) ? limite = -LIMITE : LIMITE;
+		double resultat = exponentielle(nbIterations, limite);
 		terme *= resultat;
-		printf("exo: %lf\t terme: %lf\n", terme,resultat);
+		printf("resultat: %lf\t terme: %lf\n", terme,resultat);
 	}
 
 	double resultat = exponentielle(nbIterations, reste);

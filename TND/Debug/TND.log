@@ -1,24 +1,2 @@
 ﻿  main.c
-  detectionAnomalie.c
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(48): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(59): note: cet argument est utilisé comme taille de mémoire tampon
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(105): warning C4473: 'fscanf_s' : nombre insuffisant d'arguments passés pour la chaîne de format
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(105): note: les espaces réservés et leurs paramètres attendent des arguments 2 variadiques, mais des arguments 1 ont été fournis
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(105): note: l'argument variadique manquant 2 est demandé par la chaîne de format '%c'
-  d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(105): note: cet argument est utilisé comme taille de mémoire tampon
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(112): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(113): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(114): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(115): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(116): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(143): warning C4244: '=' : conversion de 'double' en 'TypeTable', perte possible de données
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(157): warning C4098: 'table_cstr' : fonction 'void' retournant une valeur
-d:\git\tnd_ig2_demoustiezromain\tnd\detectionanomalie.c(163): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-  ax.c
-d:\git\tnd_ig2_demoustiezromain\tnd\ax.c(59): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
-  Shamir.c
-  Génération de code en cours...
-  TND.vcxproj -> D:\git\TND_IG2_DemoustiezRomain\Debug\TND.exe
+  TND.vcxproj -> C:\Users\Romain\Documents\GitHub\TND_IG2_DemoustiezRomain\Debug\TND.exe

@@ -10,7 +10,7 @@ double resultat(double reste, int nbLimites, int nbIterations);
 
 /*Sam*/
 void vider(void);
-int degre(int nbDecimales, int nbLimites);
-double expressionDuReste(int nbDecimales, int nbLimites);
+int degre(int nbDecimales, int nbLimites,double reste);
+int expressionDuReste(int nbDecimales, int nbLimites,double reste);
 int factorielle(int nbIteration);
 void calculeExpBaseA(void);
