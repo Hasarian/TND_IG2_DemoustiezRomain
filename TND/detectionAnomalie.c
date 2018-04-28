@@ -108,10 +108,10 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 		int lowerControlLimitInt;
 		int upperControlLimitInt;
 
-		lowerWarningLimitInt = (int) (lowerWarningLimit * DOUBLETOINT);
-		upperWarningLimitInt = (int) (upperWarningLimit * DOUBLETOINT);
-		lowerControlLimitInt = (int) (lowerControlLimit * DOUBLETOINT);
-		upperControlLimitInt = (int) (upperControlLimit * DOUBLETOINT);
+		lowerWarningLimitInt = (int) (round(lowerWarningLimit * DOUBLETOINT));
+		upperWarningLimitInt = (int) (round(upperWarningLimit * DOUBLETOINT));
+		lowerControlLimitInt = (int) (round(lowerControlLimit * DOUBLETOINT));
+		upperControlLimitInt = (int) (round(upperControlLimit * DOUBLETOINT));
 
 		afficheLimites(lowerControlLimit, upperControlLimit, "controle");
 		afficheLimites(lowerWarningLimit, upperWarningLimit, "surveillance");
@@ -131,7 +131,7 @@ void traitementBaseModele(int tailleEchantillon, double lowerControlLimit, doubl
 			double xBarre = sommeEchantillon / (double)tailleReelleEchantillon;
 			char * str;
 			int xBarreInt;
-			xBarreInt = (int) (xBarre * DOUBLETOINT);
+			xBarreInt = (int) (round(xBarre * DOUBLETOINT));
 
 			if (xBarreInt < lowerWarningLimitInt || xBarreInt > upperWarningLimitInt) {
 				str = "nous sommes endehors de l intervalle de surveillance";
@@ -168,7 +168,7 @@ void table_cstr(Fonction f, TypeTable tabNormale[][COLONNEMAX])
 			bSup = (iLigne / 10.) + (iColonne / 100.);
 			resultat = calculSimpson(nbPoints, bInf, bSup, f);
 			sommeProbabilitesNormalisees += resultat;
-			tabNormale[iLigne][iColonne] = (TypeTable) (sommeProbabilitesNormalisees * DOUBLETOINT);
+			tabNormale[iLigne][iColonne] = (TypeTable) (round(sommeProbabilitesNormalisees * DOUBLETOINT));
 			bInf = bSup;
 		}
 	}
